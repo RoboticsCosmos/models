@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/relations/constraint.jsonld",
+    "https://roboticscosmos.github.io/metamodels/threshold.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:constraints",
+  "@graph": [
+    {
+      "@id": "rob:eq",
+      "@type": "Equal"
+    },
+    {
+      "@id": "rob:vel_threshold_post",
+      "@type": "Threshold",
+      "threshold-value": 0.001,
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:ang_vel_threshold_post",
+      "@type": "Threshold",
+      "threshold-value": 0.001,
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_lin_vel_constraint_per",
+      "@type": [ "Constraint", "VelocityConstraint" ],
+      "threshold": "rob:vel_threshold_post",
+      "operator": "rob:eq",
+      "coordinate": "rob:move_arm_down_bl_lin_vel_coord_per"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_ang_vel_constraint_per",
+      "@type": [ "Constraint", "VelocityConstraint" ],
+      "threshold": "rob:ang_vel_threshold_post",
+      "operator": "rob:eq",
+      "coordinate": "rob:move_arm_down_bl_ang_vel_coord_per"
+    }
+  ]
+}

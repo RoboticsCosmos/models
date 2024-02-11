@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/motion_specification.jsonld",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:motion_specifications",
+  "@graph": [
+    {
+      "@id": "rob:move_arm_down_vel",
+      "@type": "MotionSpec",
+      "pre-conditions": [
+        "rob:bracelet_link_lin_vel_constraint_pre",
+        "rob:bracelet_link_ang_vel_constraint_pre"
+      ],
+      "per-conditions": [
+        "rob:move_arm_down_bl_lin_vel_constraint_per",
+        "rob:move_arm_down_bl_ang_vel_constraint_per"
+      ],
+      "post-conditions": [
+        "rob:bracelet_link_lin_vel_constraint_post",
+        "rob:bracelet_link_ang_vel_constraint_post"
+      ]
+    }
+  ]
+}

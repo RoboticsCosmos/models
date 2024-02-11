@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/controllers/pid_controller.jsonld",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:controllers",
+  "@graph": [
+    {
+      "@id": "rob:pid_move_arm_down_lin_vel_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_lin_vel_constraint_per"
+    },
+    {
+      "@id": "rob:pid_move_arm_down_ang_vel_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_ang_vel_constraint_per"
+    }
+  ]
+}

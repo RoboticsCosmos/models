@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/geometry/coordinates.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+
+  "@id": "rob:coordinates",
+
+  "@graph": [
+    {
+      "@id": "rob:move_arm_down_bl_lin_vel_coord_per",
+      "@type": [ "LinearVelocityVector", "VectorXY" ],
+      "of": "rob:bracelet_link_lin_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -0.05
+    },
+    {
+      "@id": "rob:move_arm_down_bl_ang_vel_coord_per",
+      "@type": [ "AngularVelocityVector", "VectorXYZ" ],
+      "of": "rob:bracelet_link_ang_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    }
+  ]
+}
