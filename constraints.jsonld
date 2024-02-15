@@ -26,18 +26,11 @@
       "unit": "RAD-PER-SEC"
     },
     {
-      "@id": "rob:move_arm_down_bl_lin_vel_constraint_per",
-      "@type": [ "Constraint", "VelocityConstraint" ],
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_per",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "threshold": "rob:vel_threshold_post",
       "operator": "rob:eq",
-      "coordinate": "rob:move_arm_down_bl_lin_vel_coord_per"
-    },
-    {
-      "@id": "rob:move_arm_down_bl_ang_vel_constraint_per",
-      "@type": [ "Constraint", "VelocityConstraint" ],
-      "threshold": "rob:ang_vel_threshold_post",
-      "operator": "rob:eq",
-      "coordinate": "rob:move_arm_down_bl_ang_vel_coord_per"
+      "coordinate": "rob:move_arm_down_bl_vel_twist_coord_per"
     }
   ]
 }
