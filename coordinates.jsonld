@@ -19,6 +19,19 @@
       "quantity-kind": ["LinearVelocity", "AngularVelocity"]
     },
     {
+      "@id": "rob:move_arm_down_bl_vel_twist_coord_pre",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorX",
+        "AngularVelocityVectorXYZ"
+      ],
+      "of": "rob:bracelet_link_vel_twist",
+      "as-seen-by": "rob:base_link",
+      "unit": [ "M-PER-SEC", "RAD-PER-SEC" ],
+      "linear-velocity": [ 0.0, 0.0, 0 ],
+      "angular-velocity": [ 0, 0, 0 ]
+    },
+    {
       "@id": "rob:move_arm_down_bl_vel_twist_coord_per",
       "@type": [ "VelocityReference",
         "VelocityTwistCoordinate",

@@ -14,23 +14,47 @@
       "@type": "Equal"
     },
     {
-      "@id": "rob:vel_threshold_post",
-      "@type": "Threshold",
-      "threshold-value": 0.001,
-      "unit": "M-PER-SEC"
+      "@id": "rob:lt",
+      "@type": "LessThan"
     },
     {
-      "@id": "rob:ang_vel_threshold_post",
+      "@id": "rob:vel_twist_threshold_pre",
+      "@type": "Threshold",
+      "threshold-value": 0.0,
+      "unit": ["M-PER-SEC", "RAD-PER-SEC"]
+    },
+    {
+      "@id": "rob:vel_twist_threshold_per",
       "@type": "Threshold",
       "threshold-value": 0.001,
-      "unit": "RAD-PER-SEC"
+      "unit": ["M-PER-SEC", "RAD-PER-SEC"]
+    },
+    {
+      "@id": "rob:vel_twist_threshold_post",
+      "@type": "Threshold",
+      "threshold-value": 0.001,
+      "unit": ["M-PER-SEC", "RAD-PER-SEC"]
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_pre",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "threshold": "rob:vel_twist_threshold_pre",
+      "operator": "rob:lt",
+      "coordinate": "rob:move_arm_down_bl_vel_twist_coord_pre"
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_per",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
-      "threshold": "rob:vel_threshold_post",
+      "threshold": "rob:vel_twist_threshold_per",
       "operator": "rob:eq",
       "coordinate": "rob:move_arm_down_bl_vel_twist_coord_per"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_post",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "threshold": "rob:vel_twist_threshold_post",
+      "operator": "rob:eq",
+      "coordinate": "rob:move_arm_down_bl_vel_twist_coord_pre"
     }
   ]
 }

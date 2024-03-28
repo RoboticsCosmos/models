@@ -1,6 +1,7 @@
 {
   "@context": [
     "https://roboticscosmos.github.io/metamodels/controllers/pid_controller.jsonld",
+    "https://roboticscosmos.github.io/metamodels/controllers/embedding_map.jsonld",
     {
       "rob": "https://roboticscosmos.github.io/rob#"
     }
@@ -12,12 +13,17 @@
       "@type": "PIDController",
       "p-gain": 20.0,
       "i-gain": 0.9,
-      "d-gain": 0.0,
       "time-step": 1,
       "constraint": "rob:move_arm_down_bl_vel_twist_constraint_per",
       "signal": {
         "@id": "rob:pid_move_arm_down_vel_twist_controller_signal"
       }
+    },
+    {
+      "@id": "rob:pid_move_arm_down_vel_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:pid_move_arm_down_vel_twist_controller",
+      "solver": "rob:pid_move_arm_down_vel_twist_achd_solver"
     }
   ]
 }
