@@ -23,7 +23,24 @@
       "@id": "rob:pid_move_arm_down_vel_twist_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:pid_move_arm_down_vel_twist_controller",
-      "solver": "rob:pid_move_arm_down_vel_twist_achd_solver"
+      "solver": "rob:achd_solver"
+    },
+    {
+      "@id": "rob:pid_move_arm_on_table_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:bracelet_link_target_link_ef_xy_dist_coord",
+      "signal": {
+        "@id": "rob:pid_move_arm_on_table_controller_signal"
+      }
+    },
+    {
+      "@id": "rob:move_arm_on_table_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:pid_move_arm_on_table_controller",
+      "solver": "rob:achd_solver"
     }
   ]
 }

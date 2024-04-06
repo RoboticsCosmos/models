@@ -1,0 +1,96 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/controllers/pid_controller.jsonld",
+    "https://roboticscosmos.github.io/metamodels/controllers/embedding_map.jsonld",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:controllers",
+  "@graph": [
+    {
+      "@id": "rob:move_arm_down_vel_twist_lin_x_pid_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_per_lin_x"
+    },
+    {
+      "@id": "rob:pid_move_arm_down_vel_lin_x_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:move_arm_down_vel_twist_lin_x_pid_controller",
+      "solver": "rob:achd_solver"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_lin_y_pid_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_per_lin_y"
+    },
+    {
+      "@id": "rob:pid_move_arm_down_vel_lin_y_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:move_arm_down_vel_twist_lin_y_pid_controller",
+      "solver": "rob:achd_solver"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_lin_z_pid_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_per_lin_z"
+    },
+    {
+      "@id": "rob:pid_move_arm_down_vel_lin_z_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:move_arm_down_vel_twist_lin_z_pid_controller",
+      "solver": "rob:achd_solver"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_ang_x_pid_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_per_ang_x"
+    },
+    {
+      "@id": "rob:pid_move_arm_down_vel_ang_x_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:move_arm_down_vel_twist_ang_x_pid_controller",
+      "solver": "rob:achd_solver"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_ang_y_pid_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_per_ang_y"
+    },
+    {
+      "@id": "rob:pid_move_arm_down_vel_ang_y_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:move_arm_down_vel_twist_ang_y_pid_controller",
+      "solver": "rob:achd_solver"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_ang_z_pid_controller",
+      "@type": "PIDController",
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_per_ang_z"
+    },
+    {
+      "@id": "rob:pid_move_arm_down_vel_ang_z_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:move_arm_down_vel_twist_ang_z_pid_controller",
+      "solver": "rob:achd_solver"
+    }
+  ]
+}

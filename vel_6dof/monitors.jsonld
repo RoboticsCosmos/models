@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/monitors/monitor.jsonld",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:monitors",
+  "@graph": [
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_pre_lin_x",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_x"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_pre_lin_y",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_y"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_pre_lin_z",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_z"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_pre_ang_x",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_x"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_pre_ang_y",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_y"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_pre_ang_z",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_z"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_post_lin_x",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_post_lin_x"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_post_lin_y",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_post_lin_y"
+    },
+    {
+      "@id": "rob:move_arm_down_vel_twist_monitor_post_lin_z",
+      "@type": "Monitor",
+      "constraint": "rob:move_arm_down_bl_vel_twist_constraint_post_lin_z"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "@context": [
+    "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
     "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
     "https://roboticscosmos.github.io/metamodels/geometry/coordinates.jsonld",
     "https://comp-rob2b.github.io/metamodels/qudt.json",
@@ -12,37 +13,110 @@
 
   "@graph": [
     {
-      "@id": "rob:bracelet_link_vel_twist",
+      "@id": "rob:base_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:bracelet_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:target_link_ef",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:vel_bl_wrt_base",
       "@type": "VelocityTwist",
       "of-entity": "rob:bracelet_link",
       "with-respect-to": "rob:base_link",
       "quantity-kind": ["LinearVelocity", "AngularVelocity"]
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_coord_pre",
+      "@id": "rob:vel_twist_coord_bl_wrt_base",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate"
+      ],
+      "of": "rob:vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": [ "M-PER-SEC", "RAD-PER-SEC" ]
+    },
+    {
+      "@id": "rob:vel_twist_coord_bl_wrt_base_pre",
       "@type": [ "VelocityReference",
         "VelocityTwistCoordinate",
-        "LinearVelocityVectorX",
+        "LinearVelocityVectorXYZ",
         "AngularVelocityVectorXYZ"
       ],
-      "of": "rob:bracelet_link_vel_twist",
+      "of": "rob:vel_bl_wrt_base",
       "as-seen-by": "rob:base_link",
       "unit": [ "M-PER-SEC", "RAD-PER-SEC" ],
       "linear-velocity": [ 0.0, 0.0, 0 ],
       "angular-velocity": [ 0, 0, 0 ]
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_coord_per",
+      "@id": "rob:vel_twist_coord_bl_wrt_base_per",
       "@type": [ "VelocityReference",
         "VelocityTwistCoordinate",
         "LinearVelocityVectorXYZ",
         "AngularVelocityVectorXYZ"
       ],
-      "of": "rob:bracelet_link_vel_twist",
+      "of": "rob:vel_bl_wrt_base",
       "as-seen-by": "rob:base_link",
       "unit": [ "M-PER-SEC", "RAD-PER-SEC" ],
       "linear-velocity": [ 0, 0, -0.05 ],
       "angular-velocity": [ 0, 0, 0 ]
+    },
+    {
+      "@id": "rob:bracelet_link_position",
+      "@type": "Position",
+      "of-entity": "rob:bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:bracelet_link_coord",
+      "@type": [ "3D", "Euclidean", "PositionReference", "PositionCoordinate" ],
+      "of": "rob:bracelet_link_position",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    },
+    {
+      "@id": "rob:target_link_ef_position",
+      "@type": "Position",
+      "of-entity": "rob:target_link_ef",
+      "with-respect-to": "rob:bracelet_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:target_link_ef_coord",
+      "@type": [ "3D", "Euclidean", "PositionReference", 
+                "PositionCoordinate", "VectorXYZ" ],
+      "of": "rob:target_link_ef_position",
+      "as-seen-by": "rob:bracelet_link",
+      "unit": "M",
+      "x": 0.2,
+      "y": 0.0,
+      "z": 0.0
+    },
+    {
+      "@id": "rob:bracelet_link_target_link_ef_xy_dist",
+      "@type": [
+        "EuclideanDistance",
+        "PointToPointDistance",
+        "2D", "Plane", "LinearDistance"
+      ],
+      "between-entities": [
+        "rob:bracelet_link",
+        "rob:target_link_ef"
+      ],
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:bracelet_link_target_link_ef_xy_dist_coord",
+      "@type": [ "DistanceCoordinate", "DistanceVectorXY"],
+      "of": "rob:bracelet_link_target_link_ef_xy_dist",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
     }
   ]
 }

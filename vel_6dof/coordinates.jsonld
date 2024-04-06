@@ -1,0 +1,91 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/coordinates.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+
+  "@id": "rob:coordinates",
+
+  "@graph": [
+    {
+      "@id": "rob:base_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:bracelet_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:vel_bl_wrt_base",
+      "@type": "VelocityTwist",
+      "of-entity": "rob:bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": ["LinearVelocity", "AngularVelocity"]
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_coord_lin_x",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorX"
+      ],
+      "of": "rob:vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_coord_lin_y",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorY"
+      ],
+      "of": "rob:vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_coord_lin_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorZ"
+      ],
+      "of": "rob:vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_coord_ang_x",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorX"
+      ],
+      "of": "rob:vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_coord_ang_y",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorY"
+      ],
+      "of": "rob:vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:move_arm_down_bl_vel_twist_coord_ang_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorZ"
+      ],
+      "of": "rob:vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    }
+  ]
+}

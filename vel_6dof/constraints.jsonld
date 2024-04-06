@@ -14,135 +14,109 @@
       "@type": "Equal"
     },
     {
-      "@id": "rob:lt",
-      "@type": "LessThan"
-    },
-    {
-      "@id": "rob:gt",
-      "@type": "GreaterThan"
-    },
-    {
-      "@id": "rob:vel_twist_threshold_pre",
-      "@type": "Threshold",
-      "threshold-value": 0.0,
-      "unit": ["M-PER-SEC", "RAD-PER-SEC"]
-    },
-    {
-      "@id": "rob:vel_twist_threshold_per",
-      "@type": "Threshold",
-      "threshold-value": 0.001,
-      "unit": ["M-PER-SEC", "RAD-PER-SEC"]
-    },
-    {
-      "@id": "rob:vel_twist_threshold_post",
-      "@type": "Threshold",
-      "threshold-value": 0.001,
-      "unit": ["M-PER-SEC", "RAD-PER-SEC"]
-    },
-    {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_x",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_x",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_y",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_y",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_z",
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_z",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_z",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_x",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_ang_x",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_y",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_ang_y",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_z",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_ang_z",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_x",
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_lin_x",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_x",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_y",
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_lin_y",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_y",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_z",
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_lin_z",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_z",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_per_lin_z"
+      "reference-value": -0.05
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_ang_x",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_ang_x",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_ang_y",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_ang_y",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
       "@id": "rob:move_arm_down_bl_vel_twist_constraint_per_ang_z",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_ang_z",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_per_lin_z"
+      "reference-value": 0.0
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_post_x",
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_post_lin_x",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_x",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_post_y",
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_post_lin_y",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_y",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_post_z",
+      "@id": "rob:move_arm_down_bl_vel_twist_constraint_post_lin_z",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_z",
-      "reference": "rob:move_arm_down_bl_vel_twist_coord_zero"
+      "reference-value": 0.0
     }
   ]
 }

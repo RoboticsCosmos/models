@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/solvers/vereshchagin_solver.jsonld",
+    "https://roboticscosmos.github.io/metamodels/motion_specification.jsonld",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:motion_specifications",
+  "@graph": [
+    {
+      "@id": "rob:achd_solver",
+      "@type": ["Solver", "VereshchaginSolver"],
+      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
+    },
+    {
+      "@id": "rob:move_arm_down_vel",
+      "@type": "MotionSpec",
+      "pre-conditions": [
+        "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_x",
+        "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_y",
+        "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_z",
+        "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_x",
+        "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_y",
+        "rob:move_arm_down_bl_vel_twist_constraint_mon_ang_z"
+      ],
+      "per-conditions": [
+        "rob:move_arm_down_bl_vel_twist_constraint_per_lin_x",
+        "rob:move_arm_down_bl_vel_twist_constraint_per_lin_y",
+        "rob:move_arm_down_bl_vel_twist_constraint_per_lin_z",
+        "rob:move_arm_down_bl_vel_twist_constraint_per_ang_x",
+        "rob:move_arm_down_bl_vel_twist_constraint_per_ang_y",
+        "rob:move_arm_down_bl_vel_twist_constraint_per_ang_z"
+      ],
+      "post-conditions": [
+        "rob:move_arm_down_bl_vel_twist_constraint_post_lin_x",
+        "rob:move_arm_down_bl_vel_twist_constraint_post_lin_y",
+        "rob:move_arm_down_bl_vel_twist_constraint_post_lin_z"
+      ]
+    }
+  ]
+}

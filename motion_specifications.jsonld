@@ -9,7 +9,7 @@
   "@id": "rob:motion_specifications",
   "@graph": [
     {
-      "@id": "rob:pid_move_arm_down_vel_twist_achd_solver",
+      "@id": "rob:achd_solver",
       "@type": ["Solver", "VereshchaginSolver"],
       "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
     },
@@ -24,6 +24,20 @@
       ],
       "post-conditions": [
         "rob:move_arm_down_bl_vel_twist_constraint_post"
+      ]
+    },
+    {
+      "@id": "rob:move_arm_forward_no_z_cons",
+      "@type": "MotionSpec1",
+      "pre-conditions": [
+        "rob:move_arm_down_bl_vel_twist_constraint_pre",
+        "rob:bracelet_link_target_link_ef_xy_dist_constraint_pre"
+      ],
+      "per-conditions": [
+        "rob:bracelet_link_target_link_ef_xy_dist_constraint_per"
+      ],
+      "post-conditions": [
+        "rob:bracelet_link_target_link_ef_xy_dist_constraint_post"
       ]
     }
   ]
