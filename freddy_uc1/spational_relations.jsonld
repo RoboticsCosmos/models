@@ -1,0 +1,93 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
+    "https://roboticscosmos.github.io/metamodels/newtonian-rigid-body-dynamics/spatial-relations.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:spatial-relations",
+  "@graph": [
+    {
+      "@id": "rob:kinova_left_bracelet_link_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_left_bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_link_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_right_bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kinova_left_base_link_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_left_base_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kinova_right_base_link_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_right_base_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_distance",
+      "@type": [
+        "PointToPointDistance",
+        "LinearDistance"
+      ],
+      "between-entities": [
+        "rob:kinova_left_bracelet_link",
+        "rob:kinova_left_base_link"
+      ],
+      "quantity-kind": "Distance"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_distance",
+      "@type": [
+        "PointToPointDistance",
+        "LinearDistance"
+      ],
+      "between-entities": [
+        "rob:kinova_right_bracelet_link",
+        "rob:kinova_right_base_link"
+      ],
+      "quantity-kind": "Distance"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_table_contact_force_lin_z",
+      "@type": ["Force", "ContactForce"],
+      "applied-by": "rob:kinova_left_bracelet_link",
+      "applied-to": "rob:table",
+      "quantity-kind": "Force"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_table_contact_force_lin_z",
+      "@type": ["Force", "ContactForce"],
+      "applied-by": "rob:kinova_right_bracelet_link",
+      "applied-to": "rob:table",
+      "quantity-kind": "Force"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_vel",
+      "@type": "VelocityTwist",
+      "of-entity": "rob:kinova_left_bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": ["LinearVelocity", "AngularVelocity"]
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_vel",
+      "@type": "VelocityTwist",
+      "of-entity": "rob:kinova_right_bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": ["LinearVelocity", "AngularVelocity"]
+    }
+  ]
+}

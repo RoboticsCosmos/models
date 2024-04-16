@@ -1,0 +1,109 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/relations/constraint.jsonld",
+    "https://roboticscosmos.github.io/metamodels/threshold.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
+    "https://roboticscosmos.github.io/metamodels/newtonian-rigid-body-dynamics/spatial-relations.jsonld",
+    {
+      "QuantityKind": "qudt-schema:QuantityKind",
+      "Quantity": "qudt-schema:Quantity"
+    },
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:constraints",
+  "@graph": [
+    {
+      "@id": "rob:eq",
+      "@type": "Equal"
+    },
+    {
+      "@id": "rob:gt",
+      "@type": "GreaterThan"
+    },
+    {
+      "@id": "rob:eq",
+      "@type": "LessThan"
+    },
+    {
+      "@id": "rob:arms_distance_reference_value",
+      "@type": ["QuantityKind", "Quantity", "LinearDistance"],
+      "quantity-kind": "Distance",
+      "unit": "M",
+      "value": 0.5
+    },
+    {
+      "@id": "rob:arm_table_contact_force_reference_value",
+      "@type": ["QuantityKind", "Quantity", "Force"],
+      "quantity-kind": "Force",
+      "unit": "N",
+      "value": -10.0
+    },
+    {
+      "@id": "rob:arm_bracelet_link_lin_xy_vel_reference_value",
+      "@type": ["QuantityKind", "Quantity", "LinearVelocity"],
+      "quantity-kind": "LinearVelocity",
+      "unit": "M-PER-SEC",
+      "value": -10.0
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_table_contact_force_constraint_per",
+      "@type": [ "Constraint", "ForceConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_left_bracelet_table_contact_force_coord_lin_z",
+      "reference-value": "rob:arm_table_contact_force_reference_value"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_table_contact_force_constraint_per",
+      "@type": [ "Constraint", "ForceConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_right_bracelet_table_contact_force_coord_lin_z",
+      "reference-value": "rob:arm_table_contact_force_reference_value"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_left_bracelet_base_lin_vel_coord_x",
+      "reference-value": "rob:arm_bracelet_link_lin_xy_vel_reference_value"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_lin_vel_y_constraint_per",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_left_bracelet_base_lin_vel_coord_y",
+      "reference-value": "rob:arm_bracelet_link_lin_xy_vel_reference_value"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_lin_vel_x_constraint_per",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_right_bracelet_base_lin_vel_coord_x",
+      "reference-value": "rob:arm_bracelet_link_lin_xy_vel_reference_value"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_lin_vel_y_constraint_per",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_right_bracelet_base_lin_vel_coord_y",
+      "reference-value": "rob:arm_bracelet_link_lin_xy_vel_reference_value"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_distance_coord_constraint_per",
+      "@type": [ "Constraint", "DistanceConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_left_bracelet_base_distance_coord",
+      "reference-value": "rob:arms_distance_reference_value"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_distance_coord_constraint_per",
+      "@type": [ "Constraint", "DistanceConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_right_bracelet_base_distance_coord",
+      "reference-value": "rob:arms_distance_reference_value"
+    }
+  ]
+}
