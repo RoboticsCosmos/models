@@ -1,7 +1,6 @@
 {
   "@context": [
     "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
-    "https://roboticscosmos.github.io/metamodels/newtonian-rigid-body-dynamics/spatial-relations.jsonld",
     "https://comp-rob2b.github.io/metamodels/qudt.json",
     {
       "rob": "https://roboticscosmos.github.io/rob#"
@@ -60,20 +59,6 @@
         "rob:kinova_right_base_link"
       ],
       "quantity-kind": "Distance"
-    },
-    {
-      "@id": "rob:kinova_left_bracelet_table_contact_force_lin_z",
-      "@type": ["Force", "ContactForce"],
-      "applied-by": "rob:kinova_left_bracelet_link",
-      "applied-to": "rob:table",
-      "quantity-kind": "Force"
-    },
-    {
-      "@id": "rob:kinova_right_bracelet_table_contact_force_lin_z",
-      "@type": ["Force", "ContactForce"],
-      "applied-by": "rob:kinova_right_bracelet_link",
-      "applied-to": "rob:table",
-      "quantity-kind": "Force"
     },
     {
       "@id": "rob:kinova_left_bracelet_base_vel",

@@ -2,13 +2,9 @@
   "@context": [
     "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
     "https://roboticscosmos.github.io/metamodels/geometry/coordinates.jsonld",
-    "https://roboticscosmos.github.io/metamodels/newtonian-rigid-body-dynamics/spatial-relations.jsonld",
-    "https://roboticscosmos.github.io/metamodels/newtonian-rigid-body-dynamics/coordinates.jsonld",
     "https://comp-rob2b.github.io/metamodels/qudt.json",
     {
-      "rob": "https://roboticscosmos.github.io/rob#",
-      "dyn-of": "https://comp-rob2b.github.io/metamodels/newtonian-rigid-body-dynamics/coordinates#of",
-      "geom-of": "https://comp-rob2b.github.io/metamodels/geometry/coordinates#of"
+      "rob": "https://roboticscosmos.github.io/rob#"
     }
   ],
   "@id": "rob:geom_coordinates",
@@ -20,7 +16,7 @@
         "PositionReference",
         "PositionCoordinate"
       ],
-      "geom-of": "rob:kinova_left_bracelet_link_position",
+      "of": "rob:kinova_left_bracelet_link_position",
       "with-respect-to": "rob:base_link",
       "quantity-kind": "Length"
     },
@@ -31,7 +27,7 @@
         "PositionReference",
         "PositionCoordinate"
       ],
-      "geom-of": "rob:kinova_right_bracelet_link_position",
+      "of": "rob:kinova_right_bracelet_link_position",
       "with-respect-to": "rob:base_link",
       "quantity-kind": "Length"
     },
@@ -42,7 +38,7 @@
         "PositionReference",
         "PositionCoordinate"
       ],
-      "geom-of": "rob:kinova_left_base_link_position",
+      "of": "rob:kinova_left_base_link_position",
       "with-respect-to": "rob:base_link",
       "quantity-kind": "Length"
     },
@@ -53,37 +49,23 @@
         "PositionReference",
         "PositionCoordinate"
       ],
-      "geom-of": "rob:kinova_right_base_link_position",
+      "of": "rob:kinova_right_base_link_position",
       "with-respect-to": "rob:base_link",
       "quantity-kind": "Length"
     },
     {
       "@id": "rob:kinova_left_bracelet_base_distance_coord",
       "@type": ["DistanceReference", "DistanceCoordinate", "3D", "VectorXYZ" ],
-      "geom-of": "rob:kinova_left_bracelet_base_distance",
+      "of": "rob:kinova_left_bracelet_base_distance",
       "as-seen-by": "rob:base_link",
       "unit": "M"
     },
     {
       "@id": "rob:kinova_right_bracelet_base_distance_coord",
       "@type": ["DistanceReference", "DistanceCoordinate", "3D", "VectorXYZ"],
-      "geom-of": "rob:kinova_right_bracelet_base_distance",
+      "of": "rob:kinova_right_bracelet_base_distance",
       "as-seen-by": "rob:base_link",
       "unit": "M"
-    },
-    {
-      "@id": "rob:kinova_left_bracelet_table_contact_force_coord_lin_z",
-      "@type": ["ForceReference", "WrenchCoordinate", "ForceVectorZ"],
-      "dyn-of": "rob:kinova_left_bracelet_table_contact_force_lin_z",
-      "as-seen-by": "rob:kinova_left_bracelet_link",
-      "unit": "N"
-    },
-    {
-      "@id": "rob:kinova_right_bracelet_table_contact_force_coord_lin_z",
-      "@type": ["ForceReference", "WrenchCoordinate", "ForceVectorZ"],
-      "dyn-of": "rob:kinova_right_bracelet_table_contact_force_lin_z",
-      "as-seen-by": "rob:kinova_right_bracelet_link",
-      "unit": "N"
     },
     {
       "@id": "rob:kinova_left_bracelet_base_lin_vel_coord_x",
@@ -91,7 +73,7 @@
         "VelocityTwistCoordinate",
         "LinearVelocityVectorX"
       ],
-      "geom-of": "rob:kinova_left_bracelet_base_vel",
+      "of": "rob:kinova_left_bracelet_base_vel",
       "as-seen-by": "rob:base_link",
       "unit": "M-PER-SEC"
     },
@@ -101,7 +83,7 @@
         "VelocityTwistCoordinate",
         "LinearVelocityVectorY"
       ],
-      "geom-of": "rob:kinova_left_bracelet_base_vel",
+      "of": "rob:kinova_left_bracelet_base_vel",
       "as-seen-by": "rob:base_link",
       "unit": "M-PER-SEC"
     },
@@ -111,7 +93,7 @@
         "VelocityTwistCoordinate",
         "LinearVelocityVectorX"
       ],
-      "geom-of": "rob:kinova_right_bracelet_base_vel",
+      "of": "rob:kinova_right_bracelet_base_vel",
       "as-seen-by": "rob:base_link",
       "unit": "M-PER-SEC"
     },
@@ -121,7 +103,7 @@
         "VelocityTwistCoordinate",
         "LinearVelocityVectorY"
       ],
-      "geom-of": "rob:kinova_right_bracelet_base_vel",
+      "of": "rob:kinova_right_bracelet_base_vel",
       "as-seen-by": "rob:base_link",
       "unit": "M-PER-SEC"
     }
