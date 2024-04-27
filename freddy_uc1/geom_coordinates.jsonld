@@ -57,14 +57,14 @@
       "@id": "rob:kinova_left_bracelet_base_distance_coord",
       "@type": ["DistanceReference", "DistanceCoordinate", "3D", "VectorXYZ" ],
       "of": "rob:kinova_left_bracelet_base_distance",
-      "as-seen-by": "rob:base_link",
+      "as-seen-by": "rob:kinova_left_bracelet_link",
       "unit": "M"
     },
     {
       "@id": "rob:kinova_right_bracelet_base_distance_coord",
       "@type": ["DistanceReference", "DistanceCoordinate", "3D", "VectorXYZ"],
       "of": "rob:kinova_right_bracelet_base_distance",
-      "as-seen-by": "rob:base_link",
+      "as-seen-by": "rob:kinova_right_bracelet_link",
       "unit": "M"
     },
     {

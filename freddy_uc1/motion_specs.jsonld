@@ -4,6 +4,7 @@
     "https://roboticscosmos.github.io/metamodels/solvers/vereshchagin_solver.jsonld",
     "https://roboticscosmos.github.io/metamodels/solvers/base_fd_solver.jsonld",
     "https://roboticscosmos.github.io/metamodels/motion_specification.jsonld",
+    "https://roboticscosmos.github.io/metamodels/robots.jsonld",
     {
       "rob": "https://roboticscosmos.github.io/rob#"
     }
@@ -12,34 +13,83 @@
   "@graph": [
     {
       "@id": "rob:achd_solver_fext_kinova_left",
-      "@type": ["Solver", "ACHDSolverFext"],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
+      "@type": [
+        "Solver",
+        "ACHDSolverFext"
+      ],
+      "root-acceleration": [
+        0,
+        0,
+        9.81,
+        0,
+        0,
+        0
+      ]
     },
     {
       "@id": "rob:achd_solver_fext_kinova_right",
-      "@type": ["Solver", "ACHDSolverFext"],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
+      "@type": [
+        "Solver",
+        "ACHDSolverFext"
+      ],
+      "root-acceleration": [
+        0,
+        0,
+        9.81,
+        0,
+        0,
+        0
+      ]
     },
     {
       "@id": "rob:achd_solver_kinova_left",
-      "@type": ["Solver", "ACHDSolver"],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
+      "@type": [
+        "Solver",
+        "ACHDSolver"
+      ],
+      "root-acceleration": [
+        0,
+        0,
+        9.81,
+        0,
+        0,
+        0
+      ]
     },
     {
       "@id": "rob:achd_solver_kinova_right",
-      "@type": ["Solver", "ACHDSolver"],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
+      "@type": [
+        "Solver",
+        "ACHDSolver"
+      ],
+      "root-acceleration": [
+        0,
+        0,
+        9.81,
+        0,
+        0,
+        0
+      ]
     },
     {
       "@id": "rob:fd_solver_robile",
-      "@type": ["Solver", "BaseFDSolver"],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
+      "@type": [
+        "Solver",
+        "BaseFDSolver"
+      ],
+      "root-acceleration": [
+        0,
+        0,
+        9.81,
+        0,
+        0,
+        0
+      ]
     },
     {
       "@id": "rob:freddy_uc_1",
       "@type": "MotionSpec",
-      "pre-conditions": [
-      ],
+      "pre-conditions": [],
       "per-conditions": [
         "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
         "rob:kinova_left_bracelet_table_contact_force_constraint_per",
@@ -50,7 +100,38 @@
         "rob:kinova_left_bracelet_base_distance_coord_constraint_per",
         "rob:kinova_right_bracelet_base_distance_coord_constraint_per"
       ],
-      "post-conditions": [
+      "post-conditions": []
+    },
+    {
+      "@id": "rob:kinova_left",
+      "@type": [
+        "Robot",
+        "Manipulator"
+      ],
+      "solvers": [
+        "rob:achd_solver_kinova_left",
+        "rob:achd_solver_fext_kinova_left"
+      ]
+    },
+    {
+      "@id": "rob:kinova_right",
+      "@type": [
+        "Robot",
+        "Manipulator"
+      ],
+      "solvers": [
+        "rob:achd_solver_kinova_right",
+        "rob:achd_solver_fext_kinova_right"
+      ]
+    },
+    {
+      "@id": "rob:freddy_base",
+      "@type": [
+        "Robot",
+        "MobileBase"
+      ],
+      "solvers": [
+        "rob:fd_solver_robile"
       ]
     }
   ]
