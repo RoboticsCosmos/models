@@ -17,14 +17,9 @@
         "Solver",
         "ACHDSolverFext"
       ],
-      "root-acceleration": [
-        0,
-        0,
-        9.81,
-        0,
-        0,
-        0
-      ]
+      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
+      "root-link": "rob:kinova_left_base_link",
+      "tip-link": "rob:kinova_left_bracelet_link"
     },
     {
       "@id": "rob:achd_solver_fext_kinova_right",
@@ -32,14 +27,9 @@
         "Solver",
         "ACHDSolverFext"
       ],
-      "root-acceleration": [
-        0,
-        0,
-        9.81,
-        0,
-        0,
-        0
-      ]
+      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
+      "root-link": "rob:kinova_right_base_link",
+      "tip-link": "rob:kinova_right_bracelet_link"
     },
     {
       "@id": "rob:achd_solver_kinova_left",
@@ -47,14 +37,9 @@
         "Solver",
         "ACHDSolver"
       ],
-      "root-acceleration": [
-        0,
-        0,
-        9.81,
-        0,
-        0,
-        0
-      ]
+      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
+      "root-link": "rob:kinova_left_base_link",
+      "tip-link": "rob:kinova_left_bracelet_link"
     },
     {
       "@id": "rob:achd_solver_kinova_right",
@@ -62,14 +47,9 @@
         "Solver",
         "ACHDSolver"
       ],
-      "root-acceleration": [
-        0,
-        0,
-        9.81,
-        0,
-        0,
-        0
-      ]
+      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
+      "root-link": "rob:kinova_right_base_link",
+      "tip-link": "rob:kinova_right_bracelet_link"
     },
     {
       "@id": "rob:fd_solver_robile",
@@ -77,23 +57,16 @@
         "Solver",
         "BaseFDSolver"
       ],
-      "root-acceleration": [
-        0,
-        0,
-        9.81,
-        0,
-        0,
-        0
-      ]
+      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
     },
     {
       "@id": "rob:freddy_uc_1",
       "@type": "MotionSpec",
       "pre-conditions": [],
       "per-conditions": [
-        "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
         "rob:kinova_left_bracelet_table_contact_force_constraint_per",
         "rob:kinova_right_bracelet_table_contact_force_constraint_per",
+        "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
         "rob:kinova_left_bracelet_base_lin_vel_y_constraint_per",
         "rob:kinova_right_bracelet_base_lin_vel_x_constraint_per",
         "rob:kinova_right_bracelet_base_lin_vel_y_constraint_per",
