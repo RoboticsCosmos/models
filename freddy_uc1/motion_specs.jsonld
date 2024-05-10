@@ -81,6 +81,8 @@
         "Robot",
         "Manipulator"
       ],
+      "kinematic-chain-start": "rob:kinova_left_base_link",
+      "kinematic-chain-end": "rob:kinova_left_bracelet_link",
       "solvers": [
         "rob:achd_solver_kinova_left",
         "rob:achd_solver_fext_kinova_left"
@@ -92,6 +94,8 @@
         "Robot",
         "Manipulator"
       ],
+      "kinematic-chain-start": "rob:kinova_right_base_link",
+      "kinematic-chain-end": "rob:kinova_right_bracelet_link",
       "solvers": [
         "rob:achd_solver_kinova_right",
         "rob:achd_solver_fext_kinova_right"
