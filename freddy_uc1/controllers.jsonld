@@ -39,6 +39,7 @@
       "controller": "rob:kinova_right_bracelet_table_contact_force_pid_controller",
       "solver": "rob:achd_solver_fext_kinova_right"
     },
+
     {
       "@id": "rob:kinova_left_bracelet_base_lin_vel_x_pid_controller",
       "@type": ["Controller", "PIDController"],
@@ -68,6 +69,63 @@
       "solver": "rob:achd_solver_kinova_left"
     },
     {
+      "@id": "rob:kinova_left_bracelet_base_lin_vel_z_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_left_bracelet_base_lin_vel_z_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_lin_vel_z_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_left_bracelet_base_lin_vel_z_pid_controller",
+      "solver": "rob:achd_solver_kinova_left"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_x_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_left_bracelet_base_ang_vel_x_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_x_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_left_bracelet_base_ang_vel_x_pid_controller",
+      "solver": "rob:achd_solver_kinova_left"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_y_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_left_bracelet_base_ang_vel_y_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_y_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_left_bracelet_base_ang_vel_y_pid_controller",
+      "solver": "rob:achd_solver_kinova_left"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_z_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_left_bracelet_base_ang_vel_z_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_z_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_left_bracelet_base_ang_vel_z_pid_controller",
+      "solver": "rob:achd_solver_kinova_left"
+    },
+    
+    {
       "@id": "rob:kinova_right_bracelet_base_lin_vel_x_pid_controller",
       "@type": ["Controller", "PIDController"],
       "p-gain": 20.0,
@@ -95,6 +153,63 @@
       "controller": "rob:kinova_right_bracelet_base_lin_vel_y_pid_controller",
       "solver": "rob:achd_solver_kinova_right"
     },
+    {
+      "@id": "rob:kinova_right_bracelet_base_lin_vel_z_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_right_bracelet_base_lin_vel_z_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_lin_vel_z_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_right_bracelet_base_lin_vel_z_pid_controller",
+      "solver": "rob:achd_solver_kinova_right"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_x_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_right_bracelet_base_ang_vel_x_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_x_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_right_bracelet_base_ang_vel_x_pid_controller",
+      "solver": "rob:achd_solver_kinova_right"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_y_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_right_bracelet_base_ang_vel_y_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_y_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_right_bracelet_base_ang_vel_y_pid_controller",
+      "solver": "rob:achd_solver_kinova_right"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_z_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "time-step": 1,
+      "constraint": "rob:kinova_right_bracelet_base_ang_vel_z_constraint_per"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_z_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kinova_right_bracelet_base_ang_vel_z_pid_controller",
+      "solver": "rob:achd_solver_kinova_right"
+    },
+
     {
       "@id": "rob:kinova_left_bracelet_base_distance_linear_stiffness",
       "@type": ["Stiffness", "LinearStiffness"],

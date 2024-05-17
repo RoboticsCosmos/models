@@ -88,6 +88,47 @@
       "unit": "M-PER-SEC"
     },
     {
+      "@id": "rob:kinova_left_bracelet_base_lin_vel_coord_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorZ"
+      ],
+      "of": "rob:kinova_left_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_coord_x",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorX"
+      ],
+      "of": "rob:kinova_left_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_coord_y",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorY"
+      ],
+      "of": "rob:kinova_left_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_base_ang_vel_coord_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorZ"
+      ],
+      "of": "rob:kinova_left_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+
+    {
       "@id": "rob:kinova_right_bracelet_base_lin_vel_coord_x",
       "@type": [ "VelocityReference",
         "VelocityTwistCoordinate",
@@ -106,6 +147,46 @@
       "of": "rob:kinova_right_bracelet_base_vel",
       "as-seen-by": "rob:base_link",
       "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_lin_vel_coord_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorZ"
+      ],
+      "of": "rob:kinova_right_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_coord_x",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorX"
+      ],
+      "of": "rob:kinova_right_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_coord_y",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorY"
+      ],
+      "of": "rob:kinova_right_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_base_ang_vel_coord_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorZ"
+      ],
+      "of": "rob:kinova_right_bracelet_base_vel",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
     }
   ]
 }

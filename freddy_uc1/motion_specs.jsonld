@@ -37,7 +37,7 @@
         "Solver",
         "ACHDSolver"
       ],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
+      "root-acceleration": [ -9.6, 0.99, 1.4, 0, 0, 0 ],
       "root-link": "rob:kinova_left_base_link",
       "tip-link": "rob:kinova_left_bracelet_link"
     },
@@ -47,7 +47,7 @@
         "Solver",
         "ACHDSolver"
       ],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
+      "root-acceleration": [ -9.685, -1.033, 1.324, 0, 0, 0 ],
       "root-link": "rob:kinova_right_base_link",
       "tip-link": "rob:kinova_right_bracelet_link"
     },
@@ -62,6 +62,27 @@
     {
       "@id": "rob:freddy_uc_1",
       "@type": "MotionSpec",
+      "pre-conditions": [],
+      "per-conditions": [
+        "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
+        "rob:kinova_left_bracelet_base_lin_vel_y_constraint_per",
+        "rob:kinova_left_bracelet_base_lin_vel_z_constraint_per",
+        "rob:kinova_left_bracelet_base_ang_vel_x_constraint_per",
+        "rob:kinova_left_bracelet_base_ang_vel_y_constraint_per",
+        "rob:kinova_left_bracelet_base_ang_vel_z_constraint_per",
+
+        "rob:kinova_right_bracelet_base_lin_vel_x_constraint_per",
+        "rob:kinova_right_bracelet_base_lin_vel_y_constraint_per",
+        "rob:kinova_right_bracelet_base_lin_vel_z_constraint_per",
+        "rob:kinova_right_bracelet_base_ang_vel_x_constraint_per",
+        "rob:kinova_right_bracelet_base_ang_vel_y_constraint_per",
+        "rob:kinova_right_bracelet_base_ang_vel_z_constraint_per"
+      ],
+      "post-conditions": []
+    },
+    {
+      "@id": "rob:freddy_uc_2",
+      "@type": "MotionSpec1",
       "pre-conditions": [],
       "per-conditions": [
         "rob:kinova_left_bracelet_table_contact_force_constraint_per",
@@ -84,8 +105,7 @@
       "kinematic-chain-start": "rob:kinova_left_base_link",
       "kinematic-chain-end": "rob:kinova_left_bracelet_link",
       "solvers": [
-        "rob:achd_solver_kinova_left",
-        "rob:achd_solver_fext_kinova_left"
+        "rob:achd_solver_kinova_left"
       ]
     },
     {
@@ -97,8 +117,7 @@
       "kinematic-chain-start": "rob:kinova_right_base_link",
       "kinematic-chain-end": "rob:kinova_right_bracelet_link",
       "solvers": [
-        "rob:achd_solver_kinova_right",
-        "rob:achd_solver_fext_kinova_right"
+        "rob:achd_solver_kinova_right"
       ]
     },
     {
