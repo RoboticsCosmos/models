@@ -108,9 +108,15 @@
       "constraint": "rob:kr_elbow_base_distance_constraint_per_z"
     },
     {
+      "@id": "rob:kr_elbow_force_z",
+      "@type": ["Force", "VirtualForce"],
+      "applied-to": "rob:kinova_right_half_arm_2_link"
+    },
+    {
       "@id": "rob:kr_elbow_base_base_distance_z_impedance_controller",
       "@type": ["Controller", "ImpedanceController"],
-      "stiffness": "rob:kr_elbow_base_distance_z_linear_stiffness"
+      "stiffness": "rob:kr_elbow_base_distance_z_linear_stiffness",
+      "force": "rob:kr_elbow_force_z"
     },
     {
       "@id": "rob:kr_elbow_base_base_distance_z_embed_map",
