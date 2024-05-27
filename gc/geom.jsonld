@@ -1,0 +1,132 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/coordinates.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+
+  "@id": "rob:kr_geom",
+
+  "@graph": [
+    {
+      "@id": "rob:base_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:kinova_right_half_arm_2_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:kr_vel_bl_wrt_base",
+      "@type": "VelocityTwist",
+      "of-entity": "rob:kinova_right_bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": ["LinearVelocity", "AngularVelocity"]
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_lin_x",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorX"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_lin_y",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorY"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_lin_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorZ"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_ang_x",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorX"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_ang_y",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorY"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_ang_z",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "AngularVelocityVectorZ"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_elbow_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_right_half_arm_2_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kr_elbow_position_coord",
+      "@type": [
+        "Euclidean",
+        "PositionReference",
+        "PositionCoordinate"
+      ],
+      "of": "rob:kr_elbow_position",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance",
+      "@type": [
+        "PointToPointDistance",
+        "LinearDistance"
+      ],
+      "between-entities": [
+        "rob:kinova_right_half_arm_2_link",
+        "rob:base_link"
+      ],
+      "quantity-kind": "Distance"
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance_coord_lin_z",
+      "@type": ["DistanceReference", "DistanceCoordinate", "1D", "DistanceVectorZ" ],
+      "of": "rob:kr_elbow_base_distance",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    }
+  ]
+}

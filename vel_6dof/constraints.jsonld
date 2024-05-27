@@ -14,7 +14,7 @@
       "@type": "Equal"
     },
     {
-      "@id": "rob:move_arm_down_bl_vel_twist_constraint_mon_lin_x",
+      "@id": "rob:z_bl_vel_twist_constraint_mon_lin_x",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:move_arm_down_bl_vel_twist_coord_lin_x",

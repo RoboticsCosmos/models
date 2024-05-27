@@ -1,0 +1,122 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/controllers/controller.jsonld",
+    "https://roboticscosmos.github.io/metamodels/controllers/pid_controller.jsonld",
+    "https://roboticscosmos.github.io/metamodels/controllers/impedance_controller.jsonld",
+    "https://roboticscosmos.github.io/metamodels/controllers/embedding_map.jsonld",
+    "https://roboticscosmos.github.io/metamodels/newtonian-rigid-body-dynamics/spatial-relations.jsonld",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:kr_controllers",
+  "@graph": [
+    {
+      "@id": "rob:kr_vel_twist_lin_x_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:kr_bl_vel_twist_constraint_per_lin_x"
+    },
+    {
+      "@id": "rob:pid_kr_vel_lin_x_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_vel_twist_lin_x_pid_controller",
+      "solver": "rob:kr_achd_solver"
+    },
+    {
+      "@id": "rob:kr_vel_twist_lin_y_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:kr_bl_vel_twist_constraint_per_lin_y"
+    },
+    {
+      "@id": "rob:pid_kr_vel_lin_y_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_vel_twist_lin_y_pid_controller",
+      "solver": "rob:kr_achd_solver"
+    },
+    {
+      "@id": "rob:kr_vel_twist_lin_z_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:kr_bl_vel_twist_constraint_per_lin_z"
+    },
+    {
+      "@id": "rob:pid_kr_vel_lin_z_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_vel_twist_lin_z_pid_controller",
+      "solver": "rob:kr_achd_solver"
+    },
+    {
+      "@id": "rob:kr_vel_twist_ang_x_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:kr_bl_vel_twist_constraint_per_ang_x"
+    },
+    {
+      "@id": "rob:pid_kr_vel_ang_x_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_vel_twist_ang_x_pid_controller",
+      "solver": "rob:kr_achd_solver"
+    },
+    {
+      "@id": "rob:kr_vel_twist_ang_y_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:kr_bl_vel_twist_constraint_per_ang_y"
+    },
+    {
+      "@id": "rob:pid_kr_vel_ang_y_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_vel_twist_ang_y_pid_controller",
+      "solver": "rob:kr_achd_solver"
+    },
+    {
+      "@id": "rob:kr_vel_twist_ang_z_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 0.0,
+      "time-step": 1,
+      "constraint": "rob:kr_bl_vel_twist_constraint_per_ang_z"
+    },
+    {
+      "@id": "rob:pid_kr_vel_ang_z_twist_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_vel_twist_ang_z_pid_controller",
+      "solver": "rob:kr_achd_solver"
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance_z_linear_stiffness",
+      "@type": ["Stiffness", "LinearStiffness"],
+      "stiffness-diagonal-matrix": [10.0],
+      "constraint": "rob:kr_elbow_base_distance_constraint_per_z"
+    },
+    {
+      "@id": "rob:kr_elbow_base_base_distance_z_impedance_controller",
+      "@type": ["Controller", "ImpedanceController"],
+      "stiffness": "rob:kr_elbow_base_distance_z_linear_stiffness"
+    },
+    {
+      "@id": "rob:kr_elbow_base_base_distance_z_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_elbow_base_base_distance_z_impedance_controller",
+      "solver": "rob:kr_achd_solver_fext"
+    }
+  ]
+}

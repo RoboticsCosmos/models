@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/relations/constraint.jsonld",
+    "https://roboticscosmos.github.io/metamodels/threshold.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
+    "https://roboticscosmos.github.io/metamodels/newtonian-rigid-body-dynamics/spatial-relations.jsonld",
+    {
+      "QuantityKind": "qudt-schema:QuantityKind",
+      "Quantity": "qudt-schema:Quantity"
+    },
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:kr_constraints",
+  "@graph": [
+    {
+      "@id": "rob:eq",
+      "@type": "Equal"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_reference_value",
+      "@type": ["QuantityKind", "Quantity", "LinearVelocity", "AngularVelocity"],
+      "quantity-kind": ["LinearVelocity", "AngularVelocity"],
+      "unit": ["M-PER-SEC", "RAD-PER-SEC"],
+      "value": 0.0
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_constraint_per_lin_x",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_bl_vel_twist_coord_lin_x",
+      "reference-value": "rob:kr_bl_vel_twist_reference_value"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_constraint_per_lin_y",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_bl_vel_twist_coord_lin_y",
+      "reference-value": "rob:kr_bl_vel_twist_reference_value"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_constraint_per_lin_z",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_bl_vel_twist_coord_lin_z",
+      "reference-value": "rob:kr_bl_vel_twist_reference_value"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_constraint_per_ang_x",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_bl_vel_twist_coord_ang_x",
+      "reference-value": "rob:kr_bl_vel_twist_reference_value"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_constraint_per_ang_y",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_bl_vel_twist_coord_ang_y",
+      "reference-value": "rob:kr_bl_vel_twist_reference_value"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_constraint_per_ang_z",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_bl_vel_twist_coord_ang_z",
+      "reference-value": "rob:kr_bl_vel_twist_reference_value"
+    },
+    {
+      "@id": "rob:kr_elbow_base_z_distance_reference_value",
+      "@type": ["QuantityKind", "Quantity", "LinearDistance"],
+      "quantity-kind": "Distance",
+      "unit": "M",
+      "value": 0.8
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance_constraint_per_z",
+      "@type": ["Constraint", "DistanceConstraint"],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_elbow_base_distance_coord_lin_z",
+      "reference-value": "rob:kr_elbow_base_z_distance_reference_value"
+    }
+  ]
+}
