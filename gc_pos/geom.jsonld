@@ -1,0 +1,219 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/spatial-relations.jsonld",
+    "https://roboticscosmos.github.io/metamodels/geometry/coordinates.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+
+  "@id": "rob:kr_geom",
+
+  "@graph": [
+    {
+      "@id": "rob:base_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:kinova_right_half_arm_2_link",
+      "@type": "Point"
+    },
+    {
+      "@id": "rob:kr_vel_bl_wrt_base",
+      "@type": "VelocityTwist",
+      "of-entity": "rob:kinova_right_bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": ["LinearVelocity", "AngularVelocity"]
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_lin_x",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorX"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_bl_vel_twist_coord_lin_y",
+      "@type": [ "VelocityReference",
+        "VelocityTwistCoordinate",
+        "LinearVelocityVectorY"
+      ],
+      "of": "rob:kr_vel_bl_wrt_base",
+      "as-seen-by": "rob:base_link",
+      "unit": "M-PER-SEC"
+    },
+    {
+      "@id": "rob:kr_bl_pose",
+      "@type": "Pose",
+      "of-entity": "rob:kinova_right_bracelet_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": ["Length", "Angle"]
+    },
+    {
+      "@id": "rob:kr_bl_position_coord_lin_x",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "PositionVectorX"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    },
+    {
+      "@id": "rob:kr_bl_position_coord_lin_x_initial",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "PositionVectorX"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    },
+    {
+      "@id": "rob:kr_bl_position_coord_lin_y",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "PositionVectorY"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    },
+    {
+      "@id": "rob:kr_bl_position_coord_lin_y_initial",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "PositionVectorY"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    },
+    {
+      "@id": "rob:kr_bl_position_coord_lin_z",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "PositionVectorZ"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    },
+    {
+      "@id": "rob:kr_bl_position_coord_lin_z_initial",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "PositionVectorZ"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_coord_ang_x",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "OrientationVectorX"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_coord_ang_x_initial",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "OrientationVectorX"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_coord_ang_y",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "OrientationVectorY"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_coord_ang_y_initial",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "OrientationVectorY"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_coord_ang_z",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "OrientationVectorZ"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_coord_ang_z_initial",
+      "@type": [ "PoseReference",
+        "PoseCoordinate",
+        "OrientationVectorZ"
+      ],
+      "of": "rob:kr_bl_pose",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kr_elbow_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_right_half_arm_2_link",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kr_elbow_position_coord",
+      "@type": [
+        "Euclidean",
+        "PositionReference",
+        "PoseCoordinate"
+      ],
+      "of": "rob:kr_elbow_position",
+      "with-respect-to": "rob:base_link",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance",
+      "@type": [
+        "PointToPointDistance",
+        "LinearDistance"
+      ],
+      "between-entities": [
+        "rob:kinova_right_half_arm_2_link",
+        "rob:base_link"
+      ],
+      "quantity-kind": "Distance"
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance_coord_lin_z",
+      "@type": ["DistanceReference", "DistanceCoordinate", "1D", "DistanceVectorZ" ],
+      "of": "rob:kr_elbow_base_distance",
+      "as-seen-by": "rob:base_link",
+      "unit": "M"
+    }
+  ]
+}

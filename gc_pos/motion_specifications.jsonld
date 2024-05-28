@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/solvers/solver.jsonld",
+    "https://roboticscosmos.github.io/metamodels/solvers/vereshchagin_solver.jsonld",
+    "https://roboticscosmos.github.io/metamodels/solvers/base_fd_solver.jsonld",
+    "https://roboticscosmos.github.io/metamodels/motion_specification.jsonld",
+    "https://roboticscosmos.github.io/metamodels/robots.jsonld",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:motion_specifications",
+  "@graph": [
+    {
+      "@id": "rob:kinova_right",
+      "@type": [
+        "Robot",
+        "Manipulator"
+      ],
+      "kinematic-chain-start": "rob:kinova_right_base_link",
+      "kinematic-chain-end": "rob:kinova_right_bracelet_link",
+      "solvers": [
+        "rob:kr_achd_solver",
+        "rob:kr_achd_solver_fext"
+      ]
+    },
+    {
+      "@id": "rob:kr_achd_solver",
+      "@type": ["Solver", "ACHDSolver"],
+      "root-acceleration": [-9.685, -1.033, 1.324, 0, 0, 0 ],
+      "root-link": "rob:kinova_right_base_link",
+      "tip-link": "rob:kinova_right_bracelet_link"
+    },
+    {
+      "@id": "rob:kr_achd_solver_fext",
+      "@type": ["Solver", "ACHDSolverFext"],
+      "root-link": "rob:kinova_right_base_link",
+      "tip-link": "rob:kinova_right_bracelet_link"
+    },
+    {
+      "@id": "rob:kr_gc",
+      "@type": "MotionSpec",
+      "pre-conditions": [
+      ],
+      "per-conditions": [
+        "rob:kr_bl_position_constraint_per_lin_x",
+        "rob:kr_bl_position_constraint_per_lin_y",
+        "rob:kr_bl_position_constraint_per_lin_z",
+        "rob:kr_bl_orientation_constraint_per_ang_x",
+        "rob:kr_bl_orientation_constraint_per_ang_y",
+        "rob:kr_bl_orientation_constraint_per_ang_z",
+        "rob:kr_elbow_base_distance_constraint_per_z"
+      ],
+      "post-conditions": [
+      ]
+    }
+  ]
+}
