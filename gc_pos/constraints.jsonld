@@ -74,7 +74,7 @@
       "@type": ["QuantityKind", "Quantity", "LinearDistance"],
       "quantity-kind": "Distance",
       "unit": "M",
-      "value": 1.1
+      "value": 0.9
     },
     {
       "@id": "rob:kr_elbow_base_distance_constraint_per_z",
@@ -82,6 +82,69 @@
       "operator": "rob:eq",
       "quantity": "rob:kr_elbow_base_distance_coord_lin_z",
       "reference-value": "rob:kr_elbow_base_z_distance_reference_value"
+    },
+    {
+      "@id": "rob:kl_bl Vel Twist Reference Value",
+      "@type": ["QuantityKind", "Quantity", "LinearVelocity", "AngularVelocity"],
+      "quantity-kind": ["LinearVelocity", "AngularVelocity"],
+      "unit": ["M-PER-SEC", "RAD-PER-SEC"],
+      "value": 0.0
+    },
+    {
+      "@id": "rob:kl_bl_position_constraint_per_lin_x",
+      "@type": [ "Constraint", "PoseConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_bl_position_coord_lin_x",
+      "reference-value": "rob:kl_bl_position_coord_lin_x_initial"
+    },
+    {
+      "@id": "rob:kl_bl_position_constraint_per_lin_y",
+      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_bl_position_coord_lin_y",
+      "reference-value": "rob:kl_bl_position_coord_lin_y_initial"
+    },
+    {
+      "@id": "rob:kl_bl_position_constraint_per_lin_z",
+      "@type": [ "Constraint", "PoseConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_bl_position_coord_lin_z",
+      "reference-value": "rob:kl_bl_position_coord_lin_z_initial"
+    },
+    {
+      "@id": "rob:kl_bl_orientation_constraint_per_ang_x",
+      "@type": [ "Constraint", "PoseConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_bl_orientation_coord_ang_x",
+      "reference-value": "rob:kl_bl_orientation_coord_ang_x_initial"
+    },
+    {
+      "@id": "rob:kl_bl_orientation_constraint_per_ang_y",
+      "@type": [ "Constraint", "PoseConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_bl_orientation_coord_ang_y",
+      "reference-value": "rob:kl_bl_orientation_coord_ang_y_initial"
+    },
+    {
+      "@id": "rob:kl_bl_orientation_constraint_per_ang_z",
+      "@type": [ "Constraint", "PoseConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_bl_orientation_coord_ang_z",
+      "reference-value": "rob:kl_bl_orientation_coord_ang_z_initial"
+    },
+    {
+      "@id": "rob:kl_elbow_base_z_distance_reference_value",
+      "@type": ["QuantityKind", "Quantity", "LinearDistance"],
+      "quantity-kind": "Distance",
+      "unit": "M",
+      "value": 0.9
+    },
+    {
+      "@id": "rob:kl_elbow_base_distance_constraint_per_z",
+      "@type": ["Constraint", "DistanceConstraint"],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_elbow_base_distance_coord_lin_z",
+      "reference-value": "rob:kl_elbow_base_z_distance_reference_value"
     }
   ]
 }

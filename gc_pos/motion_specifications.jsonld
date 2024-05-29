@@ -12,19 +12,6 @@
   "@id": "rob:motion_specifications",
   "@graph": [
     {
-      "@id": "rob:kinova_right",
-      "@type": [
-        "Robot",
-        "Manipulator"
-      ],
-      "kinematic-chain-start": "rob:kinova_right_base_link",
-      "kinematic-chain-end": "rob:kinova_right_bracelet_link",
-      "solvers": [
-        "rob:kr_achd_solver",
-        "rob:kr_achd_solver_fext"
-      ]
-    },
-    {
       "@id": "rob:kr_achd_solver",
       "@type": ["Solver", "ACHDSolver"],
       "root-acceleration": [-9.685, -1.033, 1.324, 0, 0, 0 ],
@@ -38,6 +25,45 @@
       "tip-link": "rob:kinova_right_bracelet_link"
     },
     {
+      "@id": "rob:kinova_right",
+      "@type": [
+        "Robot",
+        "Manipulator"
+      ],
+      "kinematic-chain-start": "rob:kinova_right_base_link",
+      "kinematic-chain-end": "rob:kinova_right_bracelet_link",
+      "solvers": [
+        "rob:kr_achd_solver",
+        "rob:kr_achd_solver_fext"
+      ]
+    },
+    {
+      "@id": "rob:kl_achd_solver",
+      "@type": ["Solver", "ACHDSolver"],
+      "root-acceleration": [-9.6, 0.99, 1.4, 0, 0, 0 ],
+      "root-link": "rob:kinova_left_base_link",
+      "tip-link": "rob:kinova_left_bracelet_link"
+    },
+    {
+      "@id": "rob:kl_achd_solver_fext",
+      "@type": ["Solver", "ACHDSolverFext"],
+      "root-link": "rob:kinova_left_base_link",
+      "tip-link": "rob:kinova_left_bracelet_link"
+    },
+    {
+      "@id": "rob:kinova_left",
+      "@type": [
+        "Robot",
+        "Manipulator"
+      ],
+      "kinematic-chain-start": "rob:kinova_left_base_link",
+      "kinematic-chain-end": "rob:kinova_left_bracelet_link",
+      "solvers": [
+        "rob:kl_achd_solver",
+        "rob:kl_achd_solver_fext"
+      ]
+    },
+    {
       "@id": "rob:kr_gc",
       "@type": "MotionSpec",
       "pre-conditions": [
@@ -49,7 +75,15 @@
         "rob:kr_bl_orientation_constraint_per_ang_x",
         "rob:kr_bl_orientation_constraint_per_ang_y",
         "rob:kr_bl_orientation_constraint_per_ang_z",
-        "rob:kr_elbow_base_distance_constraint_per_z"
+        "rob:kr_elbow_base_distance_constraint_per_z",
+
+        "rob:kl_bl_position_constraint_per_lin_x",
+        "rob:kl_bl_position_constraint_per_lin_y",
+        "rob:kl_bl_position_constraint_per_lin_z",
+        "rob:kl_bl_orientation_constraint_per_ang_x",
+        "rob:kl_bl_orientation_constraint_per_ang_y",
+        "rob:kl_bl_orientation_constraint_per_ang_z",
+        "rob:kl_elbow_base_distance_constraint_per_z"
       ],
       "post-conditions": [
       ]
