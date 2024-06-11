@@ -219,7 +219,8 @@
     {
       "@id": "rob:kinova_left_bracelet_base_distance_impedance_controller",
       "@type": ["Controller", "ImpedanceController"],
-      "stiffness": "rob:kinova_left_bracelet_base_distance_linear_stiffness"
+      "stiffness": "rob:kinova_left_bracelet_base_distance_linear_stiffness",
+      "force": "rob:kinova_left_bracelet_base_ic_force"
     },
     {
       "@id": "rob:kinova_left_bracelet_base_distance_embed_map",
@@ -236,7 +237,8 @@
     {
       "@id": "rob:kinova_right_bracelet_base_distance_impedance_controller",
       "@type": ["Controller", "ImpedanceController"],
-      "stiffness": "rob:kinova_right_bracelet_base_distance_linear_stiffness"
+      "stiffness": "rob:kinova_right_bracelet_base_distance_linear_stiffness",
+      "force": "rob:kinova_right_bracelet_base_ic_force"
     },
     {
       "@id": "rob:kinova_right_bracelet_base_distance_embed_map",

@@ -54,6 +54,17 @@
       "quantity-kind": "Length"
     },
     {
+      "@id": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance_coord",
+      "@type": [
+        "AngularDistanceReference",
+        "AngularDistanceCoordinate",
+        "AngleAboutZ"
+      ],
+      "of": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
       "@id": "rob:kinova_left_bracelet_base_distance_coord",
       "@type": ["DistanceReference", "DistanceCoordinate", "3D", "VectorXYZ" ],
       "of": "rob:kinova_left_bracelet_base_distance",

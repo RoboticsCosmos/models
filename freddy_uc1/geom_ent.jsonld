@@ -1,0 +1,91 @@
+{
+  "@context": [
+    "https://roboticscosmos.github.io/metamodels/geometry/structural-entities.jsonld",
+    "https://comp-rob2b.github.io/metamodels/qudt.json",
+    {
+      "rob": "https://roboticscosmos.github.io/rob#"
+    }
+  ],
+  "@id": "rob:geom-structural-entities",
+  "@graph": [
+    {
+      "@id": "rob:world_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:base_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:kinova_left_base_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:kinova_right_base_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:table_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:world_link",
+      "@type": [ "3D", "Frame" ],
+      "origin": "rob:world_link_origin_point"
+    },
+    {
+      "@id": "rob:base_link",
+      "@type": [ "3D", "Frame" ],
+      "origin": "rob:base_link_origin_point"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_link",
+      "@type": [ "3D", "Frame" ],
+      "origin": "rob:kinova_left_bracelet_link_origin_point"
+    },
+    {
+      "@id": "rob:kinova_right_bracelet_link",
+      "@type": [ "3D", "Frame" ],
+      "origin": "rob:kinova_right_bracelet_link_origin_point"
+    },
+    {
+      "@id": "rob:kinova_left_base_link",
+      "@type": [ "3D", "Frame" ],
+      "origin": "rob:kinova_left_base_link_origin_point"
+    },
+    {
+      "@id": "rob:kinova_right_base_link",
+      "@type": [ "3D", "Frame" ],
+      "origin": "rob:kinova_right_base_link_origin_point"
+    },
+    {
+      "@id": "rob:table_link",
+      "@type": [ "3D", "Frame" ],
+      "origin": "rob:table_link_origin_point"
+    },
+    {
+      "@id": "rob:freddy_arms_table_contact_line",
+      "@type": [ "2D", "Line" ],
+      "points": [
+        "rob:kinova_left_bracelet_link_origin_point",
+        "rob:kinova_right_bracelet_link_origin_point"
+      ]
+    },
+    {
+      "@id": "rob:freddy_arms_base_line",
+      "@type": [ "2D", "Line" ],
+      "points": [
+        "rob:kinova_left_base_link_origin_point",
+        "rob:kinova_right_base_link_origin_point"
+      ]
+    }
+  ]
+}

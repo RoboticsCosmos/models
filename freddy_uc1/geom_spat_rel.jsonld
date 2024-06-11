@@ -11,30 +11,39 @@
     {
       "@id": "rob:kinova_left_bracelet_link_position",
       "@type": "Position",
-      "of-entity": "rob:kinova_left_bracelet_link",
-      "with-respect-to": "rob:base_link",
+      "of-entity": "rob:kinova_left_bracelet_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": "Length"
     },
     {
       "@id": "rob:kinova_right_bracelet_link_position",
       "@type": "Position",
-      "of-entity": "rob:kinova_right_bracelet_link",
-      "with-respect-to": "rob:base_link",
+      "of-entity": "rob:kinova_right_bracelet_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": "Length"
     },
     {
       "@id": "rob:kinova_left_base_link_position",
       "@type": "Position",
-      "of-entity": "rob:kinova_left_base_link",
-      "with-respect-to": "rob:base_link",
+      "of-entity": "rob:kinova_left_base_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": "Length"
     },
     {
       "@id": "rob:kinova_right_base_link_position",
       "@type": "Position",
-      "of-entity": "rob:kinova_right_base_link",
-      "with-respect-to": "rob:base_link",
+      "of-entity": "rob:kinova_right_base_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance",
+      "@type": ["AngularDistanceBetweenLines", "AngularDistance"],
+      "between-entities": [
+        "rob:freddy_arms_table_contact_line",
+        "rob:freddy_arms_base_line"
+      ],
+      "quantity-kind": "Angle"
     },
     {
       "@id": "rob:kinova_left_bracelet_base_distance",
@@ -64,14 +73,14 @@
       "@id": "rob:kinova_left_bracelet_base_vel",
       "@type": "VelocityTwist",
       "of-entity": "rob:kinova_left_bracelet_link",
-      "with-respect-to": "rob:base_link",
+      "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": ["LinearVelocity", "AngularVelocity"]
     },
     {
       "@id": "rob:kinova_right_bracelet_base_vel",
       "@type": "VelocityTwist",
       "of-entity": "rob:kinova_right_bracelet_link",
-      "with-respect-to": "rob:base_link",
+      "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": ["LinearVelocity", "AngularVelocity"]
     }
   ]

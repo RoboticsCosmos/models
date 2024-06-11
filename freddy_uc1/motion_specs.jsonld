@@ -61,7 +61,7 @@
     },
     {
       "@id": "rob:freddy_uc_1",
-      "@type": "MotionSpec",
+      "@type": "MotionSpec1",
       "pre-conditions": [],
       "per-conditions": [
         "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
@@ -82,15 +82,18 @@
     },
     {
       "@id": "rob:freddy_uc_2",
-      "@type": "MotionSpec1",
+      "@type": "MotionSpec",
       "pre-conditions": [],
       "per-conditions": [
         "rob:kinova_left_bracelet_table_contact_force_constraint_per",
         "rob:kinova_right_bracelet_table_contact_force_constraint_per",
-        "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
+        
+        "rob:kinova_right_bracelet_base_lin_vel_z_constraint_per",
+        "rob:kinova_left_bracelet_base_lin_vel_z_constraint_per",
+        
         "rob:kinova_left_bracelet_base_lin_vel_y_constraint_per",
-        "rob:kinova_right_bracelet_base_lin_vel_x_constraint_per",
         "rob:kinova_right_bracelet_base_lin_vel_y_constraint_per",
+        
         "rob:kinova_left_bracelet_base_distance_coord_constraint_per",
         "rob:kinova_right_bracelet_base_distance_coord_constraint_per"
       ],
