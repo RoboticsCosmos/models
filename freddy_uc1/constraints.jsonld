@@ -72,6 +72,14 @@
     },
 
     {
+      "@id": "rob:kinova_right_bracelet_link_ang_z_constraint",
+      "@type": [ "Constraint", "OrientationConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_right_bracelet_base_ang_z",
+      "reference-value": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance_coord"
+    },
+
+    {
       "@id": "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",

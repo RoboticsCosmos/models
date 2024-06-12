@@ -17,7 +17,7 @@
         "PositionCoordinate"
       ],
       "of": "rob:kinova_left_bracelet_link_position",
-      "with-respect-to": "rob:base_link",
+      "as-seen-by": "rob:base_link",
       "quantity-kind": "Length"
     },
     {
@@ -28,7 +28,7 @@
         "PositionCoordinate"
       ],
       "of": "rob:kinova_right_bracelet_link_position",
-      "with-respect-to": "rob:base_link",
+      "as-seen-by": "rob:base_link",
       "quantity-kind": "Length"
     },
     {
@@ -39,7 +39,7 @@
         "PositionCoordinate"
       ],
       "of": "rob:kinova_left_base_link_position",
-      "with-respect-to": "rob:base_link",
+      "as-seen-by": "rob:base_link",
       "quantity-kind": "Length"
     },
     {
@@ -50,7 +50,7 @@
         "PositionCoordinate"
       ],
       "of": "rob:kinova_right_base_link_position",
-      "with-respect-to": "rob:base_link",
+      "as-seen-by": "rob:base_link",
       "quantity-kind": "Length"
     },
     {
