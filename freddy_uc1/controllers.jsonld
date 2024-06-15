@@ -12,31 +12,29 @@
   "@id": "rob:controllers",
   "@graph": [
     {
-      "@id": "rob:kinova_left_bracelet_table_contact_force_pid_controller",
+      "@id": "rob:kl_bracelet_table_contact_force_pid_controller",
       "@type": ["Controller", "PIDController"],
       "p-gain": 20.0,
       "i-gain": 0.9,
-      "time-step": 1,
-      "constraint": "rob:kinova_left_bracelet_table_contact_force_constraint_per"
+      "constraint": "rob:kl_bracelet_table_contact_force_constraint_per"
     },
     {
-      "@id": "rob:kinova_left_bracelet_table_contact_force_embed_map",
+      "@id": "rob:kl_bracelet_table_contact_force_embed_map",
       "@type": "EmbeddingMap",
-      "controller": "rob:kinova_left_bracelet_table_contact_force_pid_controller",
+      "controller": "rob:kl_bracelet_table_contact_force_pid_controller",
       "solver": "rob:kl_achd_solver_fext"
     },
     {
-      "@id": "rob:kinova_right_bracelet_table_contact_force_pid_controller",
+      "@id": "rob:kr_bracelet_table_contact_force_pid_controller",
       "@type": ["Controller", "PIDController"],
       "p-gain": 20.0,
       "i-gain": 0.9,
-      "time-step": 1,
-      "constraint": "rob:kinova_right_bracelet_table_contact_force_constraint_per"
+      "constraint": "rob:kr_bracelet_table_contact_force_constraint_per"
     },
     {
-      "@id": "rob:kinova_right_bracelet_table_contact_force_embed_map",
+      "@id": "rob:kr_bracelet_table_contact_force_embed_map",
       "@type": "EmbeddingMap",
-      "controller": "rob:kinova_right_bracelet_table_contact_force_pid_controller",
+      "controller": "rob:kr_bracelet_table_contact_force_pid_controller",
       "solver": "rob:kr_achd_solver_fext"
     },
 
@@ -46,7 +44,6 @@
       "p-gain": 10.0,
       "i-gain": 0.9,
       "d-gain": 1.0,
-      "time-step": 1,
       "constraint": "rob:kr_bl_position_constraint_per_lin_y"
     },
     {
@@ -61,7 +58,6 @@
       "p-gain": 10.0,
       "i-gain": 0.9,
       "d-gain": 1.0,
-      "time-step": 1,
       "constraint": "rob:kr_bl_position_constraint_per_lin_z"
     },
     {
@@ -76,7 +72,6 @@
       "p-gain": 20.0,
       "i-gain": 0.9,
       "d-gain": 2.5,
-      "time-step": 1,
       "constraint": "rob:kr_bl_orientation_constraint_per_ang_x"
     },
     {
@@ -91,7 +86,6 @@
       "p-gain": 20.0,
       "i-gain": 0.9,
       "d-gain": 2.5,
-      "time-step": 1,
       "constraint": "rob:kr_bl_orientation_constraint_per_ang_y"
     },
     {
@@ -106,7 +100,6 @@
       "p-gain": 20.0,
       "i-gain": 0.9,
       "d-gain": 2.5,
-      "time-step": 1,
       "constraint": "rob:kr_bl_orientation_constraint_per_ang_z"
     },
     {
@@ -141,7 +134,6 @@
       "p-gain": 10.0,
       "i-gain": 0.9,
       "d-gain": 1.5,
-      "time-step": 1,
       "constraint": "rob:kl_bl_position_constraint_per_lin_y"
     },
     {
@@ -156,7 +148,6 @@
       "p-gain": 10.0,
       "i-gain": 0.9,
       "d-gain": 1.5,
-      "time-step": 1,
       "constraint": "rob:kl_bl_position_constraint_per_lin_z"
     },
     {
@@ -171,7 +162,6 @@
       "p-gain": 20.0,
       "i-gain": 0.9,
       "d-gain": 2.5,
-      "time-step": 1,
       "constraint": "rob:kl_bl_orientation_constraint_per_ang_x"
     },
     {
@@ -186,7 +176,6 @@
       "p-gain": 20.0,
       "i-gain": 0.9,
       "d-gain": 2.5,
-      "time-step": 1,
       "constraint": "rob:kl_bl_orientation_constraint_per_ang_y"
     },
     {
@@ -201,7 +190,6 @@
       "p-gain": 20.0,
       "i-gain": 0.9,
       "d-gain": 2.5,
-      "time-step": 1,
       "constraint": "rob:kl_bl_orientation_constraint_per_ang_z"
     },
     {
@@ -231,39 +219,39 @@
     },
 
     {
-      "@id": "rob:kinova_left_bracelet_base_distance_linear_stiffness",
+      "@id": "rob:kl_bracelet_base_distance_linear_stiffness",
       "@type": ["Stiffness", "LinearStiffness"],
       "stiffness-diagonal-matrix": [1.0],
-      "constraint": "rob:kinova_left_bracelet_base_distance_coord_constraint_per"
+      "constraint": "rob:kl_bracelet_base_distance_coord_constraint_per"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_distance_impedance_controller",
+      "@id": "rob:kl_bracelet_base_distance_impedance_controller",
       "@type": ["Controller", "ImpedanceController"],
-      "stiffness": "rob:kinova_left_bracelet_base_distance_linear_stiffness",
-      "force": "rob:kinova_left_bracelet_base_ic_force"
+      "stiffness": "rob:kl_bracelet_base_distance_linear_stiffness",
+      "force": "rob:kl_bracelet_base_ic_force"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_distance_embed_map",
+      "@id": "rob:kl_bracelet_base_distance_embed_map",
       "@type": "EmbeddingMap",
-      "controller": "rob:kinova_left_bracelet_base_distance_impedance_controller",
+      "controller": "rob:kl_bracelet_base_distance_impedance_controller",
       "solver": "rob:fd_solver_robile"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_distance_linear_stiffness",
+      "@id": "rob:kr_bracelet_base_distance_linear_stiffness",
       "@type": ["Stiffness", "LinearStiffness"],
       "stiffness-diagonal-matrix": [1.0],
-      "constraint": "rob:kinova_right_bracelet_base_distance_coord_constraint_per"
+      "constraint": "rob:kr_bracelet_base_distance_coord_constraint_per"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_distance_impedance_controller",
+      "@id": "rob:kr_bracelet_base_distance_impedance_controller",
       "@type": ["Controller", "ImpedanceController"],
-      "stiffness": "rob:kinova_right_bracelet_base_distance_linear_stiffness",
-      "force": "rob:kinova_right_bracelet_base_ic_force"
+      "stiffness": "rob:kr_bracelet_base_distance_linear_stiffness",
+      "force": "rob:kr_bracelet_base_ic_force"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_distance_embed_map",
+      "@id": "rob:kr_bracelet_base_distance_embed_map",
       "@type": "EmbeddingMap",
-      "controller": "rob:kinova_right_bracelet_base_distance_impedance_controller",
+      "controller": "rob:kr_bracelet_base_distance_impedance_controller",
       "solver": "rob:fd_solver_robile"
     }
   ]

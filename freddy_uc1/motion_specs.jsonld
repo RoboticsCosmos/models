@@ -25,7 +25,7 @@
       "tip-link": "rob:kinova_right_bracelet_link"
     },
     {
-      "@id": "rob:kinova_right",
+      "@id": "rob:kr",
       "@type": [
         "Robot",
         "Manipulator"
@@ -51,7 +51,7 @@
       "tip-link": "rob:kinova_left_bracelet_link"
     },
     {
-      "@id": "rob:kinova_left",
+      "@id": "rob:kl",
       "@type": [
         "Robot",
         "Manipulator"
@@ -76,8 +76,8 @@
       "@type": "MotionSpec",
       "pre-conditions": [],
       "per-conditions": [
-        "rob:kinova_left_bracelet_table_contact_force_constraint_per",
-        "rob:kinova_right_bracelet_table_contact_force_constraint_per",
+        "rob:kl_bracelet_table_contact_force_constraint_per",
+        "rob:kr_bracelet_table_contact_force_constraint_per",
 
         "rob:kr_bl_position_constraint_per_lin_y",
         "rob:kr_bl_position_constraint_per_lin_z",
@@ -100,8 +100,8 @@
       "@type": "MotionSpec1",
       "pre-conditions": [],
       "per-conditions": [
-        "rob:kinova_left_bracelet_table_contact_force_constraint_per",
-        "rob:kinova_right_bracelet_table_contact_force_constraint_per",
+        "rob:kl_bracelet_table_contact_force_constraint_per",
+        "rob:kr_bracelet_table_contact_force_constraint_per",
 
         "rob:kr_bl_position_constraint_per_lin_y",
         "rob:kr_bl_position_constraint_per_lin_z",
@@ -116,8 +116,8 @@
         "rob:kl_bl_orientation_constraint_per_ang_y",
         "rob:kl_bl_orientation_constraint_per_ang_z",
         
-        "rob:kinova_left_bracelet_base_distance_coord_constraint_per",
-        "rob:kinova_right_bracelet_base_distance_coord_constraint_per"
+        "rob:kl_bracelet_base_distance_coord_constraint_per",
+        "rob:kr_bracelet_base_distance_coord_constraint_per"
       ],
       "post-conditions": []
     },

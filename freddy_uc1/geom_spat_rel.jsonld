@@ -9,32 +9,84 @@
   "@id": "rob:spatial-relations",
   "@graph": [
     {
-      "@id": "rob:kinova_left_bracelet_link_position",
-      "@type": "Position",
-      "of-entity": "rob:kinova_left_bracelet_link_origin_point",
-      "with-respect-to": "rob:base_link_origin_point",
-      "quantity-kind": "Length"
-    },
-    {
-      "@id": "rob:kinova_right_bracelet_link_position",
+      "@id": "rob:kr_bl_position",
       "@type": "Position",
       "of-entity": "rob:kinova_right_bracelet_link_origin_point",
       "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": "Length"
     },
     {
-      "@id": "rob:kinova_left_base_link_position",
+      "@id": "rob:kr_bl_orientation",
+      "@type": "Orientation",
+      "of-entity": "rob:kinova_right_bracelet_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
+      "quantity-kind": "Angle"
+    },
+    {
+      "@id": "rob:kl_bl_position",
       "@type": "Position",
-      "of-entity": "rob:kinova_left_base_link_origin_point",
+      "of-entity": "rob:kinova_left_bracelet_link_origin_point",
       "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": "Length"
     },
     {
-      "@id": "rob:kinova_right_base_link_position",
+      "@id": "rob:kl_bl_orientation",
+      "@type": "Orientation",
+      "of-entity": "rob:kinova_left_bracelet_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
+      "quantity-kind": "Angle"
+    },
+    {
+      "@id": "rob:kl_base_link_position",
       "@type": "Position",
-      "of-entity": "rob:kinova_right_base_link_origin_point",
+      "of-entity": "rob:kl_base_link_origin_point",
       "with-respect-to": "rob:base_link_origin_point",
       "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kr_base_link_position",
+      "@type": "Position",
+      "of-entity": "rob:kr_base_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kr_elbow_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_right_half_arm_2_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance",
+      "@type": [
+        "PointToPointDistance",
+        "LinearDistance"
+      ],
+      "between-entities": [
+        "rob:kinova_right_half_arm_2_link_origin_point",
+        "rob:base_link_origin_point"
+      ],
+      "quantity-kind": "Distance"
+    },
+    {
+      "@id": "rob:kl_elbow_position",
+      "@type": "Position",
+      "of-entity": "rob:kinova_left_half_arm_2_link_origin_point",
+      "with-respect-to": "rob:base_link_origin_point",
+      "quantity-kind": "Length"
+    },
+    {
+      "@id": "rob:kl_elbow_base_distance",
+      "@type": [
+        "PointToPointDistance",
+        "LinearDistance"
+      ],
+      "between-entities": [
+        "rob:kinova_left_half_arm_2_link_origin_point",
+        "rob:base_link_origin_point"
+      ],
+      "quantity-kind": "Distance"
     },
     {
       "@id": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance",
@@ -46,42 +98,28 @@
       "quantity-kind": "Angle"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_distance",
+      "@id": "rob:kl_bracelet_base_distance",
       "@type": [
         "PointToPointDistance",
         "LinearDistance"
       ],
       "between-entities": [
-        "rob:kinova_left_bracelet_link",
-        "rob:kinova_left_base_link"
+        "rob:kl_bracelet_link",
+        "rob:kl_base_link"
       ],
       "quantity-kind": "Distance"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_distance",
+      "@id": "rob:kr_bracelet_base_distance",
       "@type": [
         "PointToPointDistance",
         "LinearDistance"
       ],
       "between-entities": [
-        "rob:kinova_right_bracelet_link",
-        "rob:kinova_right_base_link"
+        "rob:kr_bracelet_link",
+        "rob:kr_base_link"
       ],
       "quantity-kind": "Distance"
-    },
-    {
-      "@id": "rob:kinova_left_bracelet_base_vel",
-      "@type": "VelocityTwist",
-      "of-entity": "rob:kinova_left_bracelet_link",
-      "with-respect-to": "rob:base_link_origin_point",
-      "quantity-kind": ["LinearVelocity", "AngularVelocity"]
-    },
-    {
-      "@id": "rob:kinova_right_bracelet_base_vel",
-      "@type": "VelocityTwist",
-      "of-entity": "rob:kinova_right_bracelet_link",
-      "with-respect-to": "rob:base_link_origin_point",
-      "quantity-kind": ["LinearVelocity", "AngularVelocity"]
     }
   ]
 }

@@ -10,41 +10,41 @@
   "@id": "rob:geom_coordinates",
   "@graph": [
     {
-      "@id": "rob:kinova_left_bracelet_table_contact_force_lin_z",
+      "@id": "rob:kl_bracelet_table_contact_force_lin_z",
       "@type": ["Wrench", "ContactForce"],
-      "applied-by": "rob:kinova_left_bracelet_link",
+      "applied-by": "rob:kl_bracelet_link",
       "applied-to": "rob:table",
       "quantity-kind": "Force"
     },
     {
-      "@id": "rob:kinova_right_bracelet_table_contact_force_lin_z",
+      "@id": "rob:kr_bracelet_table_contact_force_lin_z",
       "@type": ["Wrench", "ContactForce"],
-      "applied-by": "rob:kinova_right_bracelet_link",
+      "applied-by": "rob:kr_bracelet_link",
       "applied-to": "rob:table",
       "quantity-kind": "Force"
     },
     {
       "@id": "rob:kl_elbow_force_z",
       "@type": ["Force", "VirtualForce"],
-      "applied-to": "rob:kinova_left_half_arm_2_link"
+      "applied-to": "rob:kl_half_arm_2_link"
     },
     {
       "@id": "rob:kr_elbow_force_z",
       "@type": ["Force", "VirtualForce"],
-      "applied-to": "rob:kinova_right_half_arm_2_link"
+      "applied-to": "rob:kr_half_arm_2_link"
     },
     {
-      "@id": "rob:kinova_left_bracelet_table_contact_force_coord_lin_z",
+      "@id": "rob:kl_bracelet_table_contact_force_coord_lin_z",
       "@type": ["WrenchReference", "ForceCoordinate", "ForceVectorZ"],
-      "of": "rob:kinova_left_bracelet_table_contact_force_lin_z",
-      "as-seen-by": "rob:kinova_left_bracelet_link",
+      "of": "rob:kl_bracelet_table_contact_force_lin_z",
+      "as-seen-by": "rob:kl_bracelet_link",
       "unit": "N"
     },
     {
-      "@id": "rob:kinova_right_bracelet_table_contact_force_coord_lin_z",
+      "@id": "rob:kr_bracelet_table_contact_force_coord_lin_z",
       "@type": ["WrenchReference", "ForceCoordinate", "ForceVectorZ"],
-      "of": "rob:kinova_right_bracelet_table_contact_force_lin_z",
-      "as-seen-by": "rob:kinova_right_bracelet_link",
+      "of": "rob:kr_bracelet_table_contact_force_lin_z",
+      "as-seen-by": "rob:kr_bracelet_link",
       "unit": "N"
     }
   ]

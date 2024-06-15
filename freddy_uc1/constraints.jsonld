@@ -30,22 +30,22 @@
       "output": "rob:base_delta_theta_compensation"
     },
     {
-      "@id": "rob:kinova_left_bl_theta_setpoint",
+      "@id": "rob:kl_bl_theta_setpoint",
       "@type": ["Math", "Addition"],
       "input": [
-        "rob:kinova_left_bl_theta_coord_init",
+        "rob:kl_bl_theta_coord_init",
         "rob:base_delta_theta_compensation"
       ],
-      "output": "rob:kinova_left_bl_theta_setpoint"
+      "output": "rob:kl_bl_theta_setpoint"
     },
     {
-      "@id": "rob:kinova_right_bl_theta_setpoint",
+      "@id": "rob:kr_bl_theta_setpoint",
       "@type": ["Math", "Addition"],
       "input": [
-        "rob:kinova_right_bl_theta_coord_init",
+        "rob:kr_bl_theta_coord_init",
         "rob:base_delta_theta_compensation"
       ],
-      "output": "rob:kinova_right_bl_theta_setpoint"
+      "output": "rob:kr_bl_theta_setpoint"
     },
     {
       "@id": "rob:expr1",
@@ -62,7 +62,7 @@
         "rob:expr1"
       ],
       "expr": [
-        "rob:kinova_left_bl_theta_setpoint"
+        "rob:kl_bl_theta_setpoint"
       ]
     },
     {
@@ -72,7 +72,7 @@
         "rob:expr1"
       ],
       "expr": [
-        "rob:kinova_right_bl_theta_setpoint"
+        "rob:kr_bl_theta_setpoint"
       ]
     },
     {
@@ -116,33 +116,33 @@
       "value": 0.0
     },
     {
-      "@id": "rob:kinova_left_bracelet_table_contact_force_constraint_per",
+      "@id": "rob:kl_bracelet_table_contact_force_constraint_per",
       "@type": [ "Constraint", "ForceConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_table_contact_force_coord_lin_z",
+      "quantity": "rob:kl_bracelet_table_contact_force_coord_lin_z",
       "reference-value": "rob:arm_table_contact_force_reference_value"
     },
     {
-      "@id": "rob:kinova_right_bracelet_table_contact_force_constraint_per",
+      "@id": "rob:kr_bracelet_table_contact_force_constraint_per",
       "@type": [ "Constraint", "ForceConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_table_contact_force_coord_lin_z",
+      "quantity": "rob:kr_bracelet_table_contact_force_coord_lin_z",
       "reference-value": "rob:arm_table_contact_force_reference_value"
     },
 
     {
-      "@id": "rob:kinova_right_bracelet_link_ang_z_constraint",
+      "@id": "rob:kr_bracelet_link_ang_z_constraint",
       "@type": [ "Constraint", "OrientationConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_ang_z",
-      "reference-value": "rob:kinova_right_bl_theta_setpoint"
+      "quantity": "rob:kr_bracelet_base_ang_z",
+      "reference-value": "rob:kr_bl_theta_setpoint"
     },
     {
-      "@id": "rob:kinova_left_bracelet_link_ang_z_constraint",
+      "@id": "rob:kl_bracelet_link_ang_z_constraint",
       "@type": [ "Constraint", "OrientationConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_ang_z",
-      "reference-value": "rob:kinova_left_bl_theta_setpoint"
+      "quantity": "rob:kl_bracelet_base_ang_z",
+      "reference-value": "rob:kl_bl_theta_setpoint"
     },
 
     {
@@ -246,17 +246,17 @@
     },
 
     {
-      "@id": "rob:kinova_left_bracelet_base_distance_coord_constraint_per",
+      "@id": "rob:kl_bracelet_base_distance_coord_constraint_per",
       "@type": [ "Constraint", "DistanceConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_distance_coord",
+      "quantity": "rob:kl_bracelet_base_distance_coord",
       "reference-value": "rob:arms_distance_reference_value"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_distance_coord_constraint_per",
+      "@id": "rob:kr_bracelet_base_distance_coord_constraint_per",
       "@type": [ "Constraint", "DistanceConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_distance_coord",
+      "quantity": "rob:kr_bracelet_base_distance_coord",
       "reference-value": "rob:arms_distance_reference_value"
     }
   ]

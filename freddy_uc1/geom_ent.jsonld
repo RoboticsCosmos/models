@@ -37,6 +37,14 @@
       "@type": [ "3D", "Euclidean", "Point" ]
     },
     {
+      "@id": "rob:kinova_left_half_arm_2_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
+      "@id": "rob:kinova_right_half_arm_2_link_origin_point",
+      "@type": [ "3D", "Euclidean", "Point" ]
+    },
+    {
       "@id": "rob:world_link",
       "@type": [ "3D", "Frame" ],
       "origin": "rob:world_link_origin_point"
