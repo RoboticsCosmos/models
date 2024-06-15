@@ -17,6 +17,65 @@
   "@id": "rob:constraints",
   "@graph": [
     {
+      "@id": "rob:base_delta_theta",
+      "@type": ["Math", "Subtraction"],
+      "initial": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance_coord_init",
+      "current": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance_coord_current",
+      "output": "rob:base_delta_theta"
+    },
+    {
+      "@id": "rob:base_delta_theta_compensation",
+      "@type": ["Math", "Negation"],
+      "input": "rob:base_delta_theta",
+      "output": "rob:base_delta_theta_compensation"
+    },
+    {
+      "@id": "rob:kinova_left_bl_theta_setpoint",
+      "@type": ["Math", "Addition"],
+      "input": [
+        "rob:kinova_left_bl_theta_coord_init",
+        "rob:base_delta_theta_compensation"
+      ],
+      "output": "rob:kinova_left_bl_theta_setpoint"
+    },
+    {
+      "@id": "rob:kinova_right_bl_theta_setpoint",
+      "@type": ["Math", "Addition"],
+      "input": [
+        "rob:kinova_right_bl_theta_coord_init",
+        "rob:base_delta_theta_compensation"
+      ],
+      "output": "rob:kinova_right_bl_theta_setpoint"
+    },
+    {
+      "@id": "rob:expr1",
+      "@type": "Expression",
+      "expr": [
+        "rob:base_delta_theta",
+        "rob:base_delta_theta_compensation"
+      ]
+    },
+    {
+      "@id": "rob:expr2",
+      "@type": "Expression",
+      "depends-on": [
+        "rob:expr1"
+      ],
+      "expr": [
+        "rob:kinova_left_bl_theta_setpoint"
+      ]
+    },
+    {
+      "@id": "rob:expr3",
+      "@type": "Expression",
+      "depends-on": [
+        "rob:expr1"
+      ],
+      "expr": [
+        "rob:kinova_right_bl_theta_setpoint"
+      ]
+    },
+    {
       "@id": "rob:eq",
       "@type": "Equal"
     },
@@ -76,93 +135,114 @@
       "@type": [ "Constraint", "OrientationConstraint" ],
       "operator": "rob:eq",
       "quantity": "rob:kinova_right_bracelet_base_ang_z",
-      "reference-value": "rob:freddy_arms_base_and_arms_contact_lines_angular_distance_coord"
+      "reference-value": "rob:kinova_right_bl_theta_setpoint"
+    },
+    {
+      "@id": "rob:kinova_left_bracelet_link_ang_z_constraint",
+      "@type": [ "Constraint", "OrientationConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kinova_left_bracelet_base_ang_z",
+      "reference-value": "rob:kinova_left_bl_theta_setpoint"
     },
 
     {
-      "@id": "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
+      "@id": "rob:kr_bl_position_constraint_per_lin_y",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_lin_vel_coord_x",
-      "reference-value": "rob:arm_bracelet_link_lin_vel_reference_value"
+      "quantity": "rob:kr_bl_position_coord_lin_y",
+      "reference-value": "rob:kr_bl_position_coord_lin_y_initial"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_lin_vel_y_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kr_bl_position_constraint_per_lin_z",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_lin_vel_coord_y",
-      "reference-value": "rob:arm_bracelet_link_lin_vel_reference_value"
+      "quantity": "rob:kr_bl_position_coord_lin_z",
+      "reference-value": "rob:kr_bl_position_coord_lin_z_initial"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_lin_vel_z_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kr_bl_orientation_constraint_per_ang_x",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_lin_vel_coord_z",
-      "reference-value": "rob:arm_bracelet_link_lin_vel_reference_value"
+      "quantity": "rob:kr_bl_orientation_coord_ang_x",
+      "reference-value": "rob:kr_bl_orientation_coord_ang_x_initial"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_ang_vel_x_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kr_bl_orientation_constraint_per_ang_y",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_ang_vel_coord_x",
-      "reference-value": "rob:arm_bracelet_link_ang_vel_reference_value"
+      "quantity": "rob:kr_bl_orientation_coord_ang_y",
+      "reference-value": "rob:kr_bl_orientation_coord_ang_y_initial"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_ang_vel_y_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kr_bl_orientation_constraint_per_ang_z",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_ang_vel_coord_y",
-      "reference-value": "rob:arm_bracelet_link_ang_vel_reference_value"
+      "quantity": "rob:kr_bl_orientation_coord_ang_z",
+      "reference-value": "rob:kr_bl_orientation_coord_ang_z_initial"
     },
     {
-      "@id": "rob:kinova_left_bracelet_base_ang_vel_z_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kr_elbow_base_z_distance_reference_value",
+      "@type": ["QuantityKind", "Quantity", "LinearDistance"],
+      "quantity-kind": "Distance",
+      "unit": "M",
+      "value": 0.9
+    },
+    {
+      "@id": "rob:kr_elbow_base_distance_constraint_per_z",
+      "@type": ["Constraint", "DistanceConstraint"],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_left_bracelet_base_ang_vel_coord_z",
-      "reference-value": "rob:arm_bracelet_link_ang_vel_reference_value"
+      "quantity": "rob:kr_elbow_base_distance_coord_lin_z",
+      "reference-value": "rob:kr_elbow_base_z_distance_reference_value"
     },
 
     {
-      "@id": "rob:kinova_right_bracelet_base_lin_vel_x_constraint_per",
+      "@id": "rob:kl_bl_position_constraint_per_lin_y",
       "@type": [ "Constraint", "VelocityTwistConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_lin_vel_coord_x",
-      "reference-value": "rob:arm_bracelet_link_lin_vel_reference_value"
+      "quantity": "rob:kl_bl_position_coord_lin_y",
+      "reference-value": "rob:kl_bl_position_coord_lin_y_initial"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_lin_vel_y_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kl_bl_position_constraint_per_lin_z",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_lin_vel_coord_y",
-      "reference-value": "rob:arm_bracelet_link_lin_vel_reference_value"
+      "quantity": "rob:kl_bl_position_coord_lin_z",
+      "reference-value": "rob:kl_bl_position_coord_lin_z_initial"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_lin_vel_z_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kl_bl_orientation_constraint_per_ang_x",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_lin_vel_coord_z",
-      "reference-value": "rob:arm_bracelet_link_lin_vel_reference_value"
+      "quantity": "rob:kl_bl_orientation_coord_ang_x",
+      "reference-value": "rob:kl_bl_orientation_coord_ang_x_initial"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_ang_vel_x_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kl_bl_orientation_constraint_per_ang_y",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_ang_vel_coord_x",
-      "reference-value": "rob:arm_bracelet_link_ang_vel_reference_value"
+      "quantity": "rob:kl_bl_orientation_coord_ang_y",
+      "reference-value": "rob:kl_bl_orientation_coord_ang_y_initial"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_ang_vel_y_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kl_bl_orientation_constraint_per_ang_z",
+      "@type": [ "Constraint", "PoseConstraint" ],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_ang_vel_coord_y",
-      "reference-value": "rob:arm_bracelet_link_ang_vel_reference_value"
+      "quantity": "rob:kl_bl_orientation_coord_ang_z",
+      "reference-value": "rob:kl_bl_orientation_coord_ang_z_initial"
     },
     {
-      "@id": "rob:kinova_right_bracelet_base_ang_vel_z_constraint_per",
-      "@type": [ "Constraint", "VelocityTwistConstraint" ],
+      "@id": "rob:kl_elbow_base_z_distance_reference_value",
+      "@type": ["QuantityKind", "Quantity", "LinearDistance"],
+      "quantity-kind": "Distance",
+      "unit": "M",
+      "value": 0.9
+    },
+    {
+      "@id": "rob:kl_elbow_base_distance_constraint_per_z",
+      "@type": ["Constraint", "DistanceConstraint"],
       "operator": "rob:eq",
-      "quantity": "rob:kinova_right_bracelet_base_ang_vel_coord_z",
-      "reference-value": "rob:arm_bracelet_link_ang_vel_reference_value"
+      "quantity": "rob:kl_elbow_base_distance_coord_lin_z",
+      "reference-value": "rob:kl_elbow_base_z_distance_reference_value"
     },
 
     {

@@ -12,104 +12,17 @@
   "@id": "rob:motion_specifications",
   "@graph": [
     {
-      "@id": "rob:achd_solver_fext_kinova_left",
-      "@type": [
-        "Solver",
-        "ACHDSolverFext"
-      ],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
-      "root-link": "rob:kinova_left_base_link",
-      "tip-link": "rob:kinova_left_bracelet_link"
-    },
-    {
-      "@id": "rob:achd_solver_fext_kinova_right",
-      "@type": [
-        "Solver",
-        "ACHDSolverFext"
-      ],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ],
+      "@id": "rob:kr_achd_solver",
+      "@type": ["Solver", "ACHDSolver"],
+      "root-acceleration": [-9.685, -1.033, 1.324, 0, 0, 0 ],
       "root-link": "rob:kinova_right_base_link",
       "tip-link": "rob:kinova_right_bracelet_link"
     },
     {
-      "@id": "rob:achd_solver_kinova_left",
-      "@type": [
-        "Solver",
-        "ACHDSolver"
-      ],
-      "root-acceleration": [ -9.6, 0.99, 1.4, 0, 0, 0 ],
-      "root-link": "rob:kinova_left_base_link",
-      "tip-link": "rob:kinova_left_bracelet_link"
-    },
-    {
-      "@id": "rob:achd_solver_kinova_right",
-      "@type": [
-        "Solver",
-        "ACHDSolver"
-      ],
-      "root-acceleration": [ -9.685, -1.033, 1.324, 0, 0, 0 ],
+      "@id": "rob:kr_achd_solver_fext",
+      "@type": ["Solver", "ACHDSolverFext"],
       "root-link": "rob:kinova_right_base_link",
       "tip-link": "rob:kinova_right_bracelet_link"
-    },
-    {
-      "@id": "rob:fd_solver_robile",
-      "@type": [
-        "Solver",
-        "BaseFDSolver"
-      ],
-      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
-    },
-    {
-      "@id": "rob:freddy_uc_1",
-      "@type": "MotionSpec1",
-      "pre-conditions": [],
-      "per-conditions": [
-        "rob:kinova_left_bracelet_base_lin_vel_x_constraint_per",
-        "rob:kinova_left_bracelet_base_lin_vel_y_constraint_per",
-        "rob:kinova_left_bracelet_base_lin_vel_z_constraint_per",
-        "rob:kinova_left_bracelet_base_ang_vel_x_constraint_per",
-        "rob:kinova_left_bracelet_base_ang_vel_y_constraint_per",
-        "rob:kinova_left_bracelet_base_ang_vel_z_constraint_per",
-
-        "rob:kinova_right_bracelet_base_lin_vel_x_constraint_per",
-        "rob:kinova_right_bracelet_base_lin_vel_y_constraint_per",
-        "rob:kinova_right_bracelet_base_lin_vel_z_constraint_per",
-        "rob:kinova_right_bracelet_base_ang_vel_x_constraint_per",
-        "rob:kinova_right_bracelet_base_ang_vel_y_constraint_per",
-        "rob:kinova_right_bracelet_base_ang_vel_z_constraint_per"
-      ],
-      "post-conditions": []
-    },
-    {
-      "@id": "rob:freddy_uc_2",
-      "@type": "MotionSpec",
-      "pre-conditions": [],
-      "per-conditions": [
-        "rob:kinova_left_bracelet_table_contact_force_constraint_per",
-        "rob:kinova_right_bracelet_table_contact_force_constraint_per",
-        
-        "rob:kinova_right_bracelet_base_lin_vel_z_constraint_per",
-        "rob:kinova_left_bracelet_base_lin_vel_z_constraint_per",
-        
-        "rob:kinova_left_bracelet_base_lin_vel_y_constraint_per",
-        "rob:kinova_right_bracelet_base_lin_vel_y_constraint_per",
-        
-        "rob:kinova_left_bracelet_base_distance_coord_constraint_per",
-        "rob:kinova_right_bracelet_base_distance_coord_constraint_per"
-      ],
-      "post-conditions": []
-    },
-    {
-      "@id": "rob:kinova_left",
-      "@type": [
-        "Robot",
-        "Manipulator"
-      ],
-      "kinematic-chain-start": "rob:kinova_left_base_link",
-      "kinematic-chain-end": "rob:kinova_left_bracelet_link",
-      "solvers": [
-        "rob:achd_solver_kinova_left"
-      ]
     },
     {
       "@id": "rob:kinova_right",
@@ -120,8 +33,93 @@
       "kinematic-chain-start": "rob:kinova_right_base_link",
       "kinematic-chain-end": "rob:kinova_right_bracelet_link",
       "solvers": [
-        "rob:achd_solver_kinova_right"
+        "rob:kr_achd_solver",
+        "rob:kr_achd_solver_fext"
       ]
+    },
+    {
+      "@id": "rob:kl_achd_solver",
+      "@type": ["Solver", "ACHDSolver"],
+      "root-acceleration": [-9.6, 0.99, 1.4, 0, 0, 0 ],
+      "root-link": "rob:kinova_left_base_link",
+      "tip-link": "rob:kinova_left_bracelet_link"
+    },
+    {
+      "@id": "rob:kl_achd_solver_fext",
+      "@type": ["Solver", "ACHDSolverFext"],
+      "root-link": "rob:kinova_left_base_link",
+      "tip-link": "rob:kinova_left_bracelet_link"
+    },
+    {
+      "@id": "rob:kinova_left",
+      "@type": [
+        "Robot",
+        "Manipulator"
+      ],
+      "kinematic-chain-start": "rob:kinova_left_base_link",
+      "kinematic-chain-end": "rob:kinova_left_bracelet_link",
+      "solvers": [
+        "rob:kl_achd_solver",
+        "rob:kl_achd_solver_fext"
+      ]
+    },
+    {
+      "@id": "rob:fd_solver_robile",
+      "@type": [
+        "Solver",
+        "BaseFDSolver"
+      ],
+      "root-acceleration": [ 0, 0, 9.81, 0, 0, 0 ]
+    },
+    {
+      "@id": "rob:freddy_uc_ref",
+      "@type": "MotionSpec",
+      "pre-conditions": [],
+      "per-conditions": [
+        "rob:kinova_left_bracelet_table_contact_force_constraint_per",
+        "rob:kinova_right_bracelet_table_contact_force_constraint_per",
+
+        "rob:kr_bl_position_constraint_per_lin_y",
+        "rob:kr_bl_position_constraint_per_lin_z",
+        "rob:kr_bl_orientation_constraint_per_ang_x",
+        "rob:kr_bl_orientation_constraint_per_ang_y",
+        "rob:kr_bl_orientation_constraint_per_ang_z",
+        "rob:kr_elbow_base_distance_constraint_per_z",
+        
+        "rob:kl_bl_position_constraint_per_lin_y",
+        "rob:kl_bl_position_constraint_per_lin_z",
+        "rob:kl_bl_orientation_constraint_per_ang_x",
+        "rob:kl_bl_orientation_constraint_per_ang_y",
+        "rob:kl_bl_orientation_constraint_per_ang_z",
+        "rob:kl_elbow_base_distance_constraint_per_z"
+      ],
+      "post-conditions": []
+    },
+    {
+      "@id": "rob:freddy_uc_1",
+      "@type": "MotionSpec1",
+      "pre-conditions": [],
+      "per-conditions": [
+        "rob:kinova_left_bracelet_table_contact_force_constraint_per",
+        "rob:kinova_right_bracelet_table_contact_force_constraint_per",
+
+        "rob:kr_bl_position_constraint_per_lin_y",
+        "rob:kr_bl_position_constraint_per_lin_z",
+        "rob:kr_bl_orientation_constraint_per_ang_x",
+        "rob:kr_bl_orientation_constraint_per_ang_y",
+        "rob:kr_bl_orientation_constraint_per_ang_z",
+        "rob:kr_elbow_base_distance_constraint_per_z",
+        
+        "rob:kl_bl_position_constraint_per_lin_y",
+        "rob:kl_bl_position_constraint_per_lin_z",
+        "rob:kl_bl_orientation_constraint_per_ang_x",
+        "rob:kl_bl_orientation_constraint_per_ang_y",
+        "rob:kl_bl_orientation_constraint_per_ang_z",
+        
+        "rob:kinova_left_bracelet_base_distance_coord_constraint_per",
+        "rob:kinova_right_bracelet_base_distance_coord_constraint_per"
+      ],
+      "post-conditions": []
     },
     {
       "@id": "rob:freddy_base",

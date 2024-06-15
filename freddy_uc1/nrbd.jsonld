@@ -24,6 +24,16 @@
       "quantity-kind": "Force"
     },
     {
+      "@id": "rob:kl_elbow_force_z",
+      "@type": ["Force", "VirtualForce"],
+      "applied-to": "rob:kinova_left_half_arm_2_link"
+    },
+    {
+      "@id": "rob:kr_elbow_force_z",
+      "@type": ["Force", "VirtualForce"],
+      "applied-to": "rob:kinova_right_half_arm_2_link"
+    },
+    {
       "@id": "rob:kinova_left_bracelet_table_contact_force_coord_lin_z",
       "@type": ["WrenchReference", "ForceCoordinate", "ForceVectorZ"],
       "of": "rob:kinova_left_bracelet_table_contact_force_lin_z",
