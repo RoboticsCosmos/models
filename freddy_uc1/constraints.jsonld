@@ -180,6 +180,15 @@
       "quantity": "rob:kr_bl_orientation_coord_ang_z",
       "reference-value": "rob:kr_bl_orientation_coord_ang_z_initial"
     },
+
+    {
+      "@id": "rob:kr_bl_orientation_constraint_per",
+      "@type": [ "Constraint", "OrientationConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kr_bl_orientation_coord",
+      "reference-value": "rob:kr_bl_orientation_coord_initial"
+    },
+
     {
       "@id": "rob:kr_elbow_base_z_distance_reference_value",
       "@type": ["QuantityKind", "Quantity", "LinearDistance"],
@@ -230,6 +239,15 @@
       "quantity": "rob:kl_bl_orientation_coord_ang_z",
       "reference-value": "rob:kl_bl_orientation_coord_ang_z_initial"
     },
+
+    {
+      "@id": "rob:kl_bl_orientation_constraint_per",
+      "@type": [ "Constraint", "OrientationConstraint" ],
+      "operator": "rob:eq",
+      "quantity": "rob:kl_bl_orientation_coord",
+      "reference-value": "rob:kl_bl_orientation_coord_initial"
+    },
+
     {
       "@id": "rob:kl_elbow_base_z_distance_reference_value",
       "@type": ["QuantityKind", "Quantity", "LinearDistance"],

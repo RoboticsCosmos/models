@@ -47,7 +47,7 @@
       "constraint": "rob:kr_bl_position_constraint_per_lin_y"
     },
     {
-      "@id": "rob:kr_bl_position_lin_y_twist_embed_map",
+      "@id": "rob:kr_bl_position_lin_y_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kr_bl_position_lin_y_pid_controller",
       "solver": "rob:kr_achd_solver"
@@ -61,7 +61,7 @@
       "constraint": "rob:kr_bl_position_constraint_per_lin_z"
     },
     {
-      "@id": "rob:kr_bl_position_lin_z_twist_embed_map",
+      "@id": "rob:kr_bl_position_lin_z_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kr_bl_position_lin_z_pid_controller",
       "solver": "rob:kr_achd_solver"
@@ -75,7 +75,7 @@
       "constraint": "rob:kr_bl_orientation_constraint_per_ang_x"
     },
     {
-      "@id": "rob:kr_bl_orientation_ang_x_twist_embed_map",
+      "@id": "rob:kr_bl_orientation_ang_x_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kr_bl_orientation_ang_x_pid_controller",
       "solver": "rob:kr_achd_solver"
@@ -89,7 +89,7 @@
       "constraint": "rob:kr_bl_orientation_constraint_per_ang_y"
     },
     {
-      "@id": "rob:kr_bl_orientation_ang_y_twist_embed_map",
+      "@id": "rob:kr_bl_orientation_ang_y_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kr_bl_orientation_ang_y_pid_controller",
       "solver": "rob:kr_achd_solver"
@@ -103,11 +103,27 @@
       "constraint": "rob:kr_bl_orientation_constraint_per_ang_z"
     },
     {
-      "@id": "rob:kr_bl_orientation_ang_z_twist_embed_map",
+      "@id": "rob:kr_bl_orientation_ang_z_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kr_bl_orientation_ang_z_pid_controller",
       "solver": "rob:kr_achd_solver"
     },
+
+    {
+      "@id": "rob:kr_bl_orientation_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 2.5,
+      "constraint": "rob:kr_bl_orientation_constraint_per"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kr_bl_orientation_pid_controller",
+      "solver": "rob:kr_achd_solver"
+    },
+
     {
       "@id": "rob:kr_elbow_base_distance_z_linear_stiffness",
       "@type": ["Stiffness", "LinearStiffness"],
@@ -137,7 +153,7 @@
       "constraint": "rob:kl_bl_position_constraint_per_lin_y"
     },
     {
-      "@id": "rob:kl_bl_position_lin_y_twist_embed_map",
+      "@id": "rob:kl_bl_position_lin_y_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kl_bl_position_lin_y_pid_controller",
       "solver": "rob:kl_achd_solver"
@@ -151,7 +167,7 @@
       "constraint": "rob:kl_bl_position_constraint_per_lin_z"
     },
     {
-      "@id": "rob:kl_bl_position_lin_z_twist_embed_map",
+      "@id": "rob:kl_bl_position_lin_z_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kl_bl_position_lin_z_pid_controller",
       "solver": "rob:kl_achd_solver"
@@ -165,7 +181,7 @@
       "constraint": "rob:kl_bl_orientation_constraint_per_ang_x"
     },
     {
-      "@id": "rob:kl_bl_orientation_ang_x_twist_embed_map",
+      "@id": "rob:kl_bl_orientation_ang_x_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kl_bl_orientation_ang_x_pid_controller",
       "solver": "rob:kl_achd_solver"
@@ -179,7 +195,7 @@
       "constraint": "rob:kl_bl_orientation_constraint_per_ang_y"
     },
     {
-      "@id": "rob:kl_bl_orientation_ang_y_twist_embed_map",
+      "@id": "rob:kl_bl_orientation_ang_y_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kl_bl_orientation_ang_y_pid_controller",
       "solver": "rob:kl_achd_solver"
@@ -193,11 +209,27 @@
       "constraint": "rob:kl_bl_orientation_constraint_per_ang_z"
     },
     {
-      "@id": "rob:kl_bl_orientation_ang_z_twist_embed_map",
+      "@id": "rob:kl_bl_orientation_ang_z_embed_map",
       "@type": "EmbeddingMap",
       "controller": "rob:kl_bl_orientation_ang_z_pid_controller",
       "solver": "rob:kl_achd_solver"
     },
+
+    {
+      "@id": "rob:kl_bl_orientation_pid_controller",
+      "@type": ["Controller", "PIDController"],
+      "p-gain": 20.0,
+      "i-gain": 0.9,
+      "d-gain": 2.5,
+      "constraint": "rob:kl_bl_orientation_constraint_per"
+    },
+    {
+      "@id": "rob:kl_bl_orientation_embed_map",
+      "@type": "EmbeddingMap",
+      "controller": "rob:kl_bl_orientation_pid_controller",
+      "solver": "rob:kl_achd_solver"
+    },
+
     {
       "@id": "rob:kl_elbow_base_distance_z_linear_stiffness",
       "@type": ["Stiffness", "LinearStiffness"],
@@ -233,6 +265,7 @@
     {
       "@id": "rob:kl_bracelet_base_distance_embed_map",
       "@type": "EmbeddingMap",
+      "applied-at": "rob:base_link",
       "controller": "rob:kl_bracelet_base_distance_impedance_controller",
       "solver": "rob:fd_solver_robile"
     },
@@ -251,6 +284,7 @@
     {
       "@id": "rob:kr_bracelet_base_distance_embed_map",
       "@type": "EmbeddingMap",
+      "applied-at": "rob:base_link",
       "controller": "rob:kr_bracelet_base_distance_impedance_controller",
       "solver": "rob:fd_solver_robile"
     }

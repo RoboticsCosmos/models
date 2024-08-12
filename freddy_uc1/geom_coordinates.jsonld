@@ -121,6 +121,28 @@
       "as-seen-by": "rob:base_link",
       "unit": "M"
     },
+
+    {
+      "@id": "rob:kr_bl_orientation_coord_initial",
+      "@type": [ "OrientationReference",
+        "OrientationCoordinate",
+        "OrientationAboutXYZ"
+      ],
+      "of": "rob:kr_bl_orientation",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kr_bl_orientation_coord",
+      "@type": [ "OrientationReference",
+        "OrientationCoordinate",
+        "OrientationAboutXYZ"
+      ],
+      "of": "rob:kr_bl_orientation",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+
     {
       "@id": "rob:kr_bl_orientation_coord_ang_x",
       "@type": [ "OrientationReference",
@@ -243,6 +265,28 @@
       "as-seen-by": "rob:base_link",
       "unit": "M"
     },
+
+    {
+      "@id": "rob:kl_bl_orientation_coord",
+      "@type": [ "OrientationReference",
+        "OrientationCoordinate",
+        "OrientationAboutXYZ"
+      ],
+      "of": "rob:kl_bl_orientation",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+    {
+      "@id": "rob:kl_bl_orientation_coord_initial",
+      "@type": [ "OrientationReference",
+        "OrientationCoordinate",
+        "OrientationAboutXYZ"
+      ],
+      "of": "rob:kl_bl_orientation",
+      "as-seen-by": "rob:base_link",
+      "unit": "RAD"
+    },
+
     {
       "@id": "rob:kl_bl_orientation_coord_ang_x",
       "@type": [ "OrientationReference",
