@@ -19,7 +19,7 @@
       ],
       "of": "rob:kl_bracelet_link_position",
       "as-seen-by": "rob:base_link",
-      "quantity-kind": "Length"
+      "unit": "M"
     },
     {
       "@id": "rob:kr_bracelet_link_position_coord",
@@ -30,7 +30,7 @@
       ],
       "of": "rob:kr_bracelet_link_position",
       "as-seen-by": "rob:base_link",
-      "quantity-kind": "Length"
+      "unit": "M"
     },
     {
       "@id": "rob:kl_base_link_position_coord",
@@ -41,7 +41,7 @@
       ],
       "of": "rob:kl_base_link_position",
       "as-seen-by": "rob:base_link",
-      "quantity-kind": "Length"
+      "unit": "M"
     },
     {
       "@id": "rob:kr_base_link_position_coord",
@@ -52,7 +52,7 @@
       ],
       "of": "rob:kr_base_link_position",
       "as-seen-by": "rob:base_link",
-      "quantity-kind": "Length"
+      "unit": "M"
     },
 
     {
@@ -214,7 +214,7 @@
       ],
       "of": "rob:kr_elbow_position",
       "with-respect-to": "rob:base_link_origin_point",
-      "quantity-kind": "Length"
+      "unit": "M"
     },
     
     {
@@ -358,7 +358,7 @@
       ],
       "of": "rob:kl_elbow_position",
       "with-respect-to": "rob:base_link_origin_point",
-      "quantity-kind": "Length"
+      "unit": "M"
     },
     
     {
